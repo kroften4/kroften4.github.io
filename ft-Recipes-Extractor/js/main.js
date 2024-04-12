@@ -245,10 +245,7 @@ const recipesJson = {
         "rarity": "Tier 1"
     },
     "Flatbread": {
-        "ingredients": {
-            "Dough": 1,
-            "Flour": 1
-        },
+        "ingredients": {},
         "rarity": "Tier 1"
     },
     "French Fries": {
