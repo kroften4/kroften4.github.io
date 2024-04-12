@@ -9,6 +9,12 @@ textarea {
 	background-color: #333344;
 	color: white;
 }
+a {
+	color: aquamarine;
+}
+a:hover {
+	color:aqua;
+}
 /* Better Layout */
 h1 {
 	margin: 0; 
@@ -24,4 +30,7 @@ html body textarea {
 	width: 320px; 
 	height: 500px;
 	resize: none
+}
+#about {
+	float: inline-end;
 }
