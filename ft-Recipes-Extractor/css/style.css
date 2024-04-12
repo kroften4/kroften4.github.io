@@ -32,5 +32,6 @@ html body textarea {
 	resize: none
 }
 #about {
-	float: inline-end;
+	clear: both;
+	max-width: 1000px;
 }
