@@ -18,36 +18,6 @@
         </div>
     </form>
     <textarea readonly id="outputTextArea" placeholder="Result goes here, Try pushing Extract."></textarea>
-    <div>
-        <h1 id="food-truck-recipes-extractor">Food-Truck-recipes-extractor</h1>
-        <p>A web tool created for Food Truck discord bot made by man_o_valor, which helps you to find out what you can cook based on ingredients + dishes you have</p>
-        <p><a href="https://discord.gg/5FcDdcEU2R">Food Truck discord server</a></p>
-        <h2 id="usage">Usage</h2>
-        <ul>
-        <li>copy your ingredients and dishes from the corresponding commands</li>
-        <li><p>it should look like this (with ** around each item name if you&#39;re on mobile):</p>
-        <p>ingredients format:</p>
-        <p><code>🍅 Tomato ×2</code> / <code>🍅 **Tomato** ×2</code></p>
-        <p>dishes format:</p>
-        <p><code>💛 :oliveoil: Olive Oil [90 💵 ]</code> / <code>💛 :oliveoil: **Olive Oil** [90 💵 ]</code></p>
-        <p>These should look like this by default when you copy, you don&#39;t need to change anything</p>
-        </li>
-        <li>The whole message when you paste it in on the website should look something like this (order does not matter):<pre><code>🍅 <span class="hljs-selector-tag">Tomato</span> ×2
-        🥔 <span class="hljs-selector-tag">Potato</span> ×1
-        💛 <span class="hljs-selector-pseudo">:oliveoil</span>: <span class="hljs-selector-tag">Olive</span> <span class="hljs-selector-tag">Oil</span> <span class="hljs-selector-attr">[90 💵 ]</span>
-        🩶 <span class="hljs-selector-pseudo">:tortilla</span>: <span class="hljs-selector-tag">Tortilla</span> <span class="hljs-selector-attr">[40 💵 ]</span>
-        </code></pre></li>
-        <li>in the output you might sometimes see &#39;?&#39; before the recipe name - that means that the recipe has not yet been tested but i&#39;m pretty sure it works (anyway that should be a rare occasion)</li>
-        </ul>
-        <h2 id="how-it-works">How it works</h2>
-        <p>ingredients format: <code>text Ingredient Name x123</code> - line gets split by spaces, for ingredient name the first and the last elements are thrown away, for ingredient amount it gets the last element and throws away the first symbol</p>
-        <p>dish format: <code>text text Dish Name text 💵 text</code> - detected by having a &#39;💵&#39; in the line</p>
-        <p>Recipes json: I have a Google Sheet which I update first, then by using python I convert it into a formatted json and print it out, then copy it and paste into the code</p>
-        <h2 id="contacts">Contacts</h2>
-        <p>My discord username: krftn</p>
-        <h2 id="credits">Credits</h2>
-        <p><a href="https://vgcoder.w3spaces.com/">vg_coder</a> - css and general help</p>
-    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
