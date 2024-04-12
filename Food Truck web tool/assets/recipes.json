@@ -1,0 +1,449 @@
+{
+    "? Asada Taco": {
+        "ingredients": {
+            "Basic Taco": 1,
+            "Meat": 1,
+            "Onion": 1
+        },
+        "rarity": "Unknown"
+    },
+    "? Blue Ice": {
+        "ingredients": {
+            "Packed Ice": 2
+        },
+        "rarity": "Secret"
+    },
+    "? Packed Ice": {
+        "ingredients": {
+            "Ice": 2
+        },
+        "rarity": "Secret"
+    },
+    "Anchovy Pizza": {
+        "ingredients": {
+            "Fish": 1,
+            "Pizza": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Bacon": {
+        "ingredients": {
+            "Meat": 2
+        },
+        "rarity": "Basic"
+    },
+    "Baguette": {
+        "ingredients": {
+            "Bread": 3
+        },
+        "rarity": "Tier 2"
+    },
+    "Basic Taco": {
+        "ingredients": {
+            "Cheese": 1,
+            "Meat": 1,
+            "Tortilla": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Boba Tea": {
+        "ingredients": {
+            "Milk": 1,
+            "Tea": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Bread": {
+        "ingredients": {
+            "Dough": 1,
+            "Flour": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Broth": {
+        "ingredients": {
+            "Meat": 1,
+            "Water": 1
+        },
+        "rarity": "Basic"
+    },
+    "Burger": {
+        "ingredients": {
+            "Bread": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Butter": {
+        "ingredients": {
+            "Milk": 2
+        },
+        "rarity": "Basic"
+    },
+    "Cake": {
+        "ingredients": {
+            "Batter": 2,
+            "Icing": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Caramel": {
+        "ingredients": {
+            "Sugar": 2
+        },
+        "rarity": "Basic"
+    },
+    "Caramel Apple": {
+        "ingredients": {
+            "Apple": 1,
+            "Caramel": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Cheese": {
+        "ingredients": {
+            "Milk": 3
+        },
+        "rarity": "Tier 1"
+    },
+    "Cheese Fondue": {
+        "ingredients": {
+            "Cheese": 2
+        },
+        "rarity": "Tier 3"
+    },
+    "Cherry Pie": {
+        "ingredients": {},
+        "rarity": "Exotic"
+    },
+    "Chocolate Donut": {
+        "ingredients": {
+            "Chocolate Icing": 1,
+            "Dough": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Chocolate Fondue": {
+        "ingredients": {
+            "Chocolate": 2,
+            "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Chocolate Ice Pop": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Ice": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Chocolate Icing": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Milk": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Chocolate Shaved Ice": {
+        "ingredients": {},
+        "rarity": "Tier 2"
+    },
+    "Cinnamon Rolls": {
+        "ingredients": {},
+        "rarity": "Unknown"
+    },
+    "Croissant": {
+        "ingredients": {
+            "Butter": 2,
+            "Dough": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Curry": {
+        "ingredients": {
+            "Broth": 1,
+            "Rice": 1,
+            "Spices": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Donut": {
+        "ingredients": {
+            "Dough": 1,
+            "Icing": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Dough": {
+        "ingredients": {
+            "Flour": 1,
+            "Water": 1
+        },
+        "rarity": "Basic"
+    },
+    "Dumpling": {
+        "ingredients": {
+            "Dough": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Egg Nigiri": {
+        "ingredients": {
+            "Egg": 1,
+            "Rice": 1
+        },
+        "rarity": "Basic"
+    },
+    "Fish Nigiri": {
+        "ingredients": {
+            "Fish": 1,
+            "Rice": 1
+        },
+        "rarity": "Basic"
+    },
+    "Flan": {
+        "ingredients": {
+            "Caramel": 1,
+            "Egg": 1,
+            "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "French Fries": {
+        "ingredients": {
+            "Olive Oil": 1,
+            "Potato": 1,
+            "Spices": 1
+        },
+        "rarity": "Unknown"
+    },
+    "Ice": {
+        "ingredients": {
+            "Water": 2
+        },
+        "rarity": "Basic"
+    },
+    "Iced Tea": {
+        "ingredients": {
+            "Ice": 1,
+            "Tea": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Icing": {
+        "ingredients": {
+            "Milk": 1,
+            "Sugar": 1
+        },
+        "rarity": "Basic"
+    },
+    "Latte": {
+        "ingredients": {},
+        "rarity": "Exotic"
+    },
+    "Le Fishe au Chocolat": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Fish": 1
+        },
+        "rarity": "Secret"
+    },
+    "Lemon Cake": {
+        "ingredients": {
+            "Batter": 2,
+            "Lemon Icing": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Lemon Cupcake": {
+        "ingredients": {
+            "Batter": 1,
+            "Lemon Icing": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Lemon Ice Cream": {
+        "ingredients": {
+            "Icecream": 1,
+            "Lemon": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Lemon Ice Pop": {
+        "ingredients": {
+            "Ice": 1,
+            "Lemon": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Lemon Icing": {
+        "ingredients": {
+            "Lemon": 1,
+            "Milk": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Lemonade": {
+        "ingredients": {
+            "Lemon": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Unknown"
+    },
+    "Nachos": {
+        "ingredients": {
+            "Cheese": 1,
+            "Tortilla Chips": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "NothingBurger": {
+        "ingredients": {
+            "Bread": 2
+        },
+        "rarity": "Secret"
+    },
+    "Oden": {
+        "ingredients": {
+            "Egg": 1,
+            "Fish": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Olive Oil": {
+        "ingredients": {
+            "Olives": 2
+        },
+        "rarity": "Basic"
+    },
+    "Omelette": {
+        "ingredients": {
+            "Egg": 2,
+            "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Onion Rings": {
+        "ingredients": {
+            "Olive Oil": 1,
+            "Onion": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Pancakes": {
+        "ingredients": {
+            "Batter": 1,
+            "Butter": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Pasta with Sauce": {
+        "ingredients": {
+            "Noodles": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Pepperoni Pizza": {
+        "ingredients": {
+            "Meat": 1,
+            "Pizza": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Pie Crust": {
+        "ingredients": {
+            "Dough": 1,
+            "Water": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Popcorn": {
+        "ingredients": {
+            "Butter": 1,
+            "Corn": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Ramen": {
+        "ingredients": {
+            "Broth": 1,
+            "Noodles": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Rice Ball": {
+        "ingredients": {
+            "Rice": 2
+        },
+        "rarity": "Tier 1"
+    },
+    "Salad": {
+        "ingredients": {
+            "Lettuce": 1,
+            "Olive Oil": 1,
+            "Tomato": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Sashimi": {
+        "ingredients": {
+            "Fish": 2
+        },
+        "rarity": "Basic"
+    },
+    "Syrup": {
+        "ingredients": {
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Basic"
+    },
+    "Taco": {
+        "ingredients": {
+            "Basic Taco": 1,
+            "Lettuce": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Tomato Sauce": {
+        "ingredients": {
+            "Tomato": 2
+        },
+        "rarity": "Basic"
+    },
+    "Tortilla": {
+        "ingredients": {
+            "Flour": 2
+        },
+        "rarity": "Basic"
+    },
+    "Tortilla Chips": {
+        "ingredients": {
+            "Tortilla": 2
+        },
+        "rarity": "Tier 1"
+    },
+    "Uranium": {
+        "ingredients": {
+            "Lemon Cake": 2
+        },
+        "rarity": "Secret"
+    },
+    "Vanilla Cupcake": {
+        "ingredients": {
+            "Batter": 1,
+            "Icing": 1
+        },
+        "rarity": "Tier 2"
+    }
+}

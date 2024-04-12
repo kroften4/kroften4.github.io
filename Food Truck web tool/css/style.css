@@ -1,0 +1,27 @@
+/* ~ ~ CSS by VG_CODER https://vgcoder.w3spaces.com/ ~ ~ */ 
+/* Font and Background */
+body {
+	background-color: #222233;
+	font-family: Arial;
+	color: white;
+}
+textarea {
+	background-color: #333344;
+	color: white;
+}
+/* Better Layout */
+h1 {
+	margin: 0; 
+}
+#sendFormBtn {
+	position: absolute; 
+	transform: translate(-325px, 485px);
+}
+html body textarea {
+	float: left;
+}
+#userItemsInput, #outputTextArea {
+	width: 320px; 
+	height: 500px;
+	resize: none
+}
