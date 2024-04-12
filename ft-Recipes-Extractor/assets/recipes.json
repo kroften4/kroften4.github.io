@@ -1,17 +1,17 @@
 {
-    "? Asada Taco": {
-        "ingredients": {
-            "Basic Taco": 1,
-            "Meat": 1,
-            "Onion": 1
-        },
-        "rarity": "Unknown"
-    },
     "? Blue Ice": {
         "ingredients": {
             "Packed Ice": 2
         },
         "rarity": "Secret"
+    },
+    "? Chocolate Shaved Ice": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Ice": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
     },
     "? Packed Ice": {
         "ingredients": {
@@ -25,6 +25,14 @@
             "Pizza": 1
         },
         "rarity": "Tier 3"
+    },
+    "Asada Taco": {
+        "ingredients": {
+            "Meat": 1,
+            "Onion": 1,
+            "Tortilla": 1
+        },
+        "rarity": "Unknown"
     },
     "Bacon": {
         "ingredients": {
@@ -45,6 +53,14 @@
             "Tortilla": 1
         },
         "rarity": "Tier 2"
+    },
+    "Batter": {
+        "ingredients": {
+            "Egg": 1,
+            "Flour": 1,
+            "Olive Oil": 1
+        },
+        "rarity": "Tier 1"
     },
     "Boba Tea": {
         "ingredients": {
@@ -112,9 +128,26 @@
         },
         "rarity": "Tier 3"
     },
+    "CheeseBurger": {
+        "ingredients": {
+            "Burger": 1,
+            "Cheese": 1
+        },
+        "rarity": "Tier 3"
+    },
     "Cherry Pie": {
-        "ingredients": {},
+        "ingredients": {
+            "Cherries": 1,
+            "Pie Crust": 1
+        },
         "rarity": "Exotic"
+    },
+    "Chocolate Cake": {
+        "ingredients": {
+            "Batter": 2,
+            "Chocolate Icing": 1
+        },
+        "rarity": "Tier 3"
     },
     "Chocolate Donut": {
         "ingredients": {
@@ -146,13 +179,12 @@
         },
         "rarity": "Tier 1"
     },
-    "Chocolate Shaved Ice": {
-        "ingredients": {},
+    "Chocolate Pie": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Pie Crust": 1
+        },
         "rarity": "Tier 2"
-    },
-    "Cinnamon Rolls": {
-        "ingredients": {},
-        "rarity": "Unknown"
     },
     "Croissant": {
         "ingredients": {
@@ -209,6 +241,13 @@
             "Caramel": 1,
             "Egg": 1,
             "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Flatbread": {
+        "ingredients": {
+            "Dough": 1,
+            "Flour": 1
         },
         "rarity": "Tier 1"
     },
@@ -288,6 +327,21 @@
         },
         "rarity": "Tier 1"
     },
+    "Lemon Pie": {
+        "ingredients": {
+            "Lemon": 1,
+            "Pie Crust": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Lemon Shaved Ice": {
+        "ingredients": {
+            "Ice": 1,
+            "Lemon": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Lemonade": {
         "ingredients": {
             "Lemon": 1,
@@ -295,6 +349,13 @@
             "Water": 1
         },
         "rarity": "Unknown"
+    },
+    "Mushroom Pizza": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Pizza": 1
+        },
+        "rarity": "Exotic"
     },
     "Nachos": {
         "ingredients": {
@@ -322,6 +383,13 @@
             "Olives": 2
         },
         "rarity": "Basic"
+    },
+    "Olive Pizza": {
+        "ingredients": {
+            "Olives": 1,
+            "Pizza": 1
+        },
+        "rarity": "Tier 3"
     },
     "Omelette": {
         "ingredients": {
@@ -373,6 +441,13 @@
         },
         "rarity": "Exotic"
     },
+    "Pretzel": {
+        "ingredients": {
+            "Dough": 1,
+            "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
     "Ramen": {
         "ingredients": {
             "Broth": 1,
@@ -383,6 +458,14 @@
     "Rice Ball": {
         "ingredients": {
             "Rice": 2
+        },
+        "rarity": "Tier 1"
+    },
+    "Rice Pudding": {
+        "ingredients": {
+            "Milk": 1,
+            "Rice": 1,
+            "Sugar": 1
         },
         "rarity": "Tier 1"
     },
@@ -414,6 +497,14 @@
             "Tomato Sauce": 1
         },
         "rarity": "Tier 3"
+    },
+    "Tamale": {
+        "ingredients": {
+            "Broth": 1,
+            "Corn": 1,
+            "Meat": 1
+        },
+        "rarity": "Exotic"
     },
     "Tomato Sauce": {
         "ingredients": {
