@@ -5,6 +5,14 @@ const recipesJson = {
         },
         "rarity": "Secret"
     },
+    "? Chocolate Shaved Ice": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Ice": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
     "? Packed Ice": {
         "ingredients": {
             "Ice": 2
@@ -45,6 +53,14 @@ const recipesJson = {
             "Tortilla": 1
         },
         "rarity": "Tier 2"
+    },
+    "Batter": {
+        "ingredients": {
+            "Egg": 1,
+            "Flour": 1,
+            "Olive Oil": 1
+        },
+        "rarity": "Tier 1"
     },
     "Boba Tea": {
         "ingredients": {
@@ -120,7 +136,10 @@ const recipesJson = {
         "rarity": "Tier 3"
     },
     "Cherry Pie": {
-        "ingredients": {},
+        "ingredients": {
+            "Cherries": 1,
+            "Pie Crust": 1
+        },
         "rarity": "Exotic"
     },
     "Chocolate Cake": {
@@ -160,13 +179,12 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
-    "Chocolate Shaved Ice": {
-        "ingredients": {},
+    "Chocolate Pie": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Pie Crust": 1
+        },
         "rarity": "Tier 2"
-    },
-    "Cinnamon Rolls": {
-        "ingredients": {},
-        "rarity": "Unknown"
     },
     "Croissant": {
         "ingredients": {
@@ -223,6 +241,13 @@ const recipesJson = {
             "Caramel": 1,
             "Egg": 1,
             "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Flatbread": {
+        "ingredients": {
+            "Dough": 1,
+            "Flour": 1
         },
         "rarity": "Tier 1"
     },
@@ -309,6 +334,14 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
+    "Lemon Shaved Ice": {
+        "ingredients": {
+            "Ice": 1,
+            "Lemon": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Lemonade": {
         "ingredients": {
             "Lemon": 1,
@@ -316,6 +349,13 @@ const recipesJson = {
             "Water": 1
         },
         "rarity": "Unknown"
+    },
+    "Mushroom Pizza": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Pizza": 1
+        },
+        "rarity": "Exotic"
     },
     "Nachos": {
         "ingredients": {
@@ -401,6 +441,13 @@ const recipesJson = {
         },
         "rarity": "Exotic"
     },
+    "Pretzel": {
+        "ingredients": {
+            "Dough": 1,
+            "Milk": 1
+        },
+        "rarity": "Tier 1"
+    },
     "Ramen": {
         "ingredients": {
             "Broth": 1,
@@ -450,6 +497,14 @@ const recipesJson = {
             "Tomato Sauce": 1
         },
         "rarity": "Tier 3"
+    },
+    "Tamale": {
+        "ingredients": {
+            "Broth": 1,
+            "Corn": 1,
+            "Meat": 1
+        },
+        "rarity": "Exotic"
     },
     "Tomato Sauce": {
         "ingredients": {
