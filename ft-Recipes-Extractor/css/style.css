@@ -15,6 +15,12 @@ a {
 a:hover {
 	color:aqua;
 }
+code {
+	display:inline-table;
+	background: #111122;
+	height:max-content;
+	width:max-content;
+}
 /* Better Layout */
 h1 {
 	margin: 0; 
