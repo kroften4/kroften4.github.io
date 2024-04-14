@@ -9,17 +9,6 @@ textarea {
 	background-color: #333344;
 	color: white;
 }
-a {
-	color: aquamarine;
-}
-a:hover {
-	color:aqua;
-}
-code {
-	display:inline-table;
-	background: #111122;
-	height:max-content;
-}
 /* Better Layout */
 h1 {
 	margin: 0; 
@@ -35,6 +24,21 @@ html body textarea {
 	width: 320px; 
 	height: 500px;
 	resize: none
+}
+
+/* ~ ~ kroften ~ ~ */
+a {
+	color: aquamarine;
+}
+a:hover {
+	color:aqua;
+}
+code {
+	display:inline-table;
+	background: #111122;
+	border-radius: 3px;
+	padding-inline: 3px;
+	padding-bottom: 1px;
 }
 #about {
 	clear: both;
