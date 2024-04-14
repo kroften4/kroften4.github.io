@@ -5,7 +5,7 @@ const recipesJson = {
         },
         "rarity": "Secret"
     },
-    "? Chocolate Shaved Ice": {
+    "Chocolate Shaved Ice": {
         "ingredients": {
             "Chocolate": 1,
             "Ice": 1,
@@ -186,6 +186,13 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
+    "Cookie": {
+        "ingredients": {
+            "Dough": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 1"
+    },
     "Croissant": {
         "ingredients": {
             "Butter": 2,
@@ -198,6 +205,14 @@ const recipesJson = {
             "Broth": 1,
             "Rice": 1,
             "Spices": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Dango": {
+        "ingredients": {
+            "Dough": 1,
+            "Rice": 1,
+            "Syrup": 1
         },
         "rarity": "Tier 1"
     },
@@ -431,6 +446,14 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Pizza": {
+        "ingredients": {
+            "Cheese": 1,
+            "Dough": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Popcorn": {
         "ingredients": {
             "Butter": 1,
@@ -570,6 +593,7 @@ function inputToItemsJson(message) {
         } else {
             var itemName = line.split(' ').slice(1, -1).join(' ');
             var amount = parseInt(line.split(' ').slice(-1)[0].slice(1));
+            if (isNaN(amount)) continue
         }
         itemName = itemName.replace(/\*/g, '')
         if (!(itemName in userItems)) userItems[itemName] = 0
@@ -601,8 +625,9 @@ function sendForm(e) {
         let canCook = true
         for (var recipeIngredient in recipe["ingredients"]) {
             requiredAmount = recipe["ingredients"][recipeIngredient]
+            userAmount = userItems[recipeIngredient]
             if (recipeIngredient in userItems) {
-                if (userItems[recipeIngredient] < requiredAmount) {
+                if (userAmount < requiredAmount) {
                     canCook = false
                     break
                 }
@@ -635,10 +660,12 @@ function sendForm(e) {
         const recipe = awailableRecipes[recipeName]
         response += `${recipeName} (${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`
     }
+    if (!response) {
+        response = "Seems like you can't cook anything out of these ingredients"
+    }
     const outputBox = document.getElementById("outputTextArea")
     outputBox.innerHTML = response
 }
-
 
 
 const sendButton = document.getElementById("sendFormBtn");
