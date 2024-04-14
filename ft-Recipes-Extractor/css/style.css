@@ -24,14 +24,14 @@ code {
 h1 {
 	margin: 0; 
 }
-#sendFormBtn {
+#send-form-btn {
 	position: absolute; 
 	transform: translate(-325px, 485px);
 }
 html body textarea {
 	float: left;
 }
-#userItemsInput, #outputTextArea {
+#user-items-input, #output-textarea {
 	width: 320px; 
 	height: 500px;
 	resize: none
@@ -39,4 +39,9 @@ html body textarea {
 #about {
 	clear: both;
 	max-width: 1000px;
+}
+#last-update {
+	clear: both;
+	margin: 0;
+	padding-top: 5px;
 }
