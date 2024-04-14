@@ -611,7 +611,7 @@ function itemsObjectToString(itemsObject) {
 
 function sendForm(e) {
     // extract items from input
-    const userInput = document.getElementById("userItemsInput").value;
+    const userInput = document.getElementById("user-items-input").value;
     const userItems = inputToItemsJson(userInput)
     
     // collect awailable recipes
@@ -663,10 +663,10 @@ function sendForm(e) {
     if (!response) {
         response = "Seems like you can't cook anything out of these ingredients"
     }
-    const outputBox = document.getElementById("outputTextArea")
+    const outputBox = document.getElementById("output-textarea")
     outputBox.innerHTML = response
 }
 
 
-const sendButton = document.getElementById("sendFormBtn");
+const sendButton = document.getElementById("send-form-btn");
 sendButton.addEventListener("click", sendForm)
