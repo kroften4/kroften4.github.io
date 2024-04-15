@@ -15,9 +15,9 @@ h1 {
 }
 #send-form-btn {
 	position: absolute; 
-	transform: translate(-325px, 485px);
+	transform: translate(-325px, 484px);
 }
-html body textarea {
+html body textarea, html body .fake-textarea {
 	float: left;
 }
 #user-items-input, #output-textarea {
@@ -49,3 +49,38 @@ code {
 	margin: 0;
 	padding-top: 5px;
 }
+.fake-textarea {
+	background-color: #333344;
+	color: white;
+	border: 1px solid #666677;
+	padding: 2px;
+	font-size: 13.3px;
+	font-family: monospace;
+	overflow-y: scroll;
+	white-space:pre-wrap;
+}
+.fake-textarea:empty:not(:focus):before {
+	color: rgb(160, 160, 160);
+	content: attr(placeholder);
+}
+#user-items-input {
+	padding-bottom: 22px;
+	height: 480px;
+}
+textarea::placeholder {
+	color: rgb(160, 160, 160);
+}
+/* textarea scrollbar */
+textarea::-webkit-scrollbar, .fake-textarea::-webkit-scrollbar {
+	width: 9px;
+}
+textarea::-webkit-scrollbar-track, .fake-textarea::-webkit-scrollbar-track{
+background: #00000000; 
+}
+textarea::-webkit-scrollbar-thumb, .fake-textarea::-webkit-scrollbar-thumb{
+background: #888; 
+}
+textarea::-webkit-scrollbar-thumb:hover, .fake-textarea::-webkit-scrollbar-thumb:hover{
+background: #666; 
+}
+/* --- */
