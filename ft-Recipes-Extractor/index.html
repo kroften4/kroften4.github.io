@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes Extractor for Food Truck bot</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="main">
@@ -15,7 +15,7 @@
             <button type="button" id="send-form-btn">Extract</button>
         </form>
         <textarea readonly id="output-textarea" placeholder="Result goes here, Try pushing Extract."></textarea>
-        <p id="last-update">Last recipes json update: 14.04.2024</p>
+        <p id="last-update">Last recipes json update: 15.04.2024 14:30 UTC</p>
     </div>
     <p><div id="about"><br>
         <h1>About</h1>
@@ -51,8 +51,11 @@
         <p>Recipes json: I have a Google Sheet which I update first, then by using python I convert it into a formatted json and print it out, then copy it and paste into the code</p>
         <h2>Contacts</h2>
         <p>My discord username: krftn</p>
-        <h2>Credits</h2>
-        <p><a href="https://vgcoder.w3spaces.com/" target="_blank">vg_coder</a> - css and general help</p>
+        <div id="credits">
+            <h2>Credits</h2>
+            <p><a href="https://vgcoder.w3spaces.com/" target="_blank">vg_coder</a> - css and general help</p>
+            <p>Penguin Squire - provided some of the recipes</p>
+        </div>
     </div></p>
     <script src="js/main.js"></script>
 </body>
