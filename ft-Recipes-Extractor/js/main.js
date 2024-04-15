@@ -5,19 +5,13 @@ const recipesJson = {
         },
         "rarity": "Secret"
     },
-    "Chocolate Shaved Ice": {
+    "Alfredo": {
         "ingredients": {
-            "Chocolate": 1,
-            "Ice": 1,
-            "Syrup": 1
+            "Cheese": 1,
+            "Milk": 1,
+            "Noodles": 1
         },
         "rarity": "Tier 2"
-    },
-    "? Packed Ice": {
-        "ingredients": {
-            "Ice": 2
-        },
-        "rarity": "Secret"
     },
     "Anchovy Pizza": {
         "ingredients": {
@@ -32,13 +26,20 @@ const recipesJson = {
             "Onion": 1,
             "Tortilla": 1
         },
-        "rarity": "Unknown"
+        "rarity": "Tier 1"
     },
     "Bacon": {
         "ingredients": {
             "Meat": 2
         },
         "rarity": "Basic"
+    },
+    "Bagel": {
+        "ingredients": {
+            "Bread": 1,
+            "Cream Cheese": 1
+        },
+        "rarity": "Tier 3"
     },
     "Baguette": {
         "ingredients": {
@@ -126,9 +127,9 @@ const recipesJson = {
         "ingredients": {
             "Cheese": 2
         },
-        "rarity": "Tier 3"
+        "rarity": "Tier 2"
     },
-    "CheeseBurger": {
+    "Cheeseburger": {
         "ingredients": {
             "Burger": 1,
             "Cheese": 1
@@ -148,6 +149,13 @@ const recipesJson = {
             "Chocolate Icing": 1
         },
         "rarity": "Tier 3"
+    },
+    "Chocolate Cupcake": {
+        "ingredients": {
+            "Batter": 1,
+            "Chocolate Icing": 1
+        },
+        "rarity": "Tier 2"
     },
     "Chocolate Donut": {
         "ingredients": {
@@ -186,12 +194,35 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
+    "Chocolate Shaved Ice": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Ice": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Cinnamon Rolls": {
+        "ingredients": {
+            "Dough": 1,
+            "Icing": 1,
+            "Spices": 1
+        },
+        "rarity": "Tier 1"
+    },
     "Cookie": {
         "ingredients": {
             "Dough": 1,
             "Sugar": 1
         },
         "rarity": "Tier 1"
+    },
+    "Cream Cheese": {
+        "ingredients": {
+            "Cheese": 1,
+            "Milk": 1
+        },
+        "rarity": "Tier 2"
     },
     "Croissant": {
         "ingredients": {
@@ -260,7 +291,11 @@ const recipesJson = {
         "rarity": "Tier 1"
     },
     "Flatbread": {
-        "ingredients": {},
+        "ingredients": {
+            "Dough": 1,
+            "Flour": 1,
+            "Milk": 1
+        },
         "rarity": "Tier 1"
     },
     "French Fries": {
@@ -269,7 +304,23 @@ const recipesJson = {
             "Potato": 1,
             "Spices": 1
         },
-        "rarity": "Unknown"
+        "rarity": "Tier 1"
+    },
+    "French Toast": {
+        "ingredients": {
+            "Egg": 1,
+            "Syrup": 1,
+            "Toast": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Fried Meat": {
+        "ingredients": {
+            "Egg": 1,
+            "Flour": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 1"
     },
     "Ice": {
         "ingredients": {
@@ -308,6 +359,14 @@ const recipesJson = {
             "Lemon Icing": 1
         },
         "rarity": "Tier 3"
+    },
+    "Lemon Cookie": {
+        "ingredients": {
+            "Dough": 1,
+            "Lemon": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 2"
     },
     "Lemon Cupcake": {
         "ingredients": {
@@ -360,7 +419,14 @@ const recipesJson = {
             "Sugar": 1,
             "Water": 1
         },
-        "rarity": "Unknown"
+        "rarity": "Tier 1"
+    },
+    "Mac and Cheese": {
+        "ingredients": {
+            "Cheese": 1,
+            "Noodles": 1
+        },
+        "rarity": "Tier 2"
     },
     "Mushroom Pizza": {
         "ingredients": {
@@ -417,11 +483,24 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Packed Ice": {
+        "ingredients": {
+            "Ice": 2
+        },
+        "rarity": "Secret"
+    },
     "Pancakes": {
         "ingredients": {
             "Batter": 1,
             "Butter": 1,
             "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Pasta and Meatballs": {
+        "ingredients": {
+            "Meat": 1,
+            "Pasta with Sauce": 1
         },
         "rarity": "Tier 2"
     },
@@ -445,6 +524,14 @@ const recipesJson = {
             "Water": 1
         },
         "rarity": "Tier 1"
+    },
+    "Pineapple Soda": {
+        "ingredients": {
+            "Pineapple": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
     },
     "Pizza": {
         "ingredients": {
@@ -502,6 +589,21 @@ const recipesJson = {
             "Fish": 2
         },
         "rarity": "Basic"
+    },
+    "Stuffed Flatbread": {
+        "ingredients": {
+            "Flatbread": 1,
+            "Lettuce": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Sushi Roll": {
+        "ingredients": {
+            "Fish": 1,
+            "Rice": 2
+        },
+        "rarity": "Unknown"
     },
     "Syrup": {
         "ingredients": {
