@@ -760,7 +760,7 @@ function sendForm(e) {
     let response = ""
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName]
-        response += `${recipeName} (${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`
+        response += `• <b>${recipeName}</b> (${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`
     }
     if (!response) {
         response = "Seems like you can't cook anything out of these ingredients"
