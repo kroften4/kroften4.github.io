@@ -14,7 +14,7 @@
             <textarea required id="user-items-input" placeholder="Paste in your ingredients and dishes here"></textarea>
             <button type="button" id="send-form-btn">Extract</button>
         </form>
-        <textarea readonly id="output-textarea" placeholder="Result goes here, Try pushing Extract."></textarea>
+        <div class="fake-textarea" id="output-textarea" placeholder="Result goes here, Try pushing Extract."></div>
         <p id="last-update">Last recipes json update: 15.04.2024 14:30 UTC</p>
     </div>
     <p><div id="about"><br>
@@ -46,17 +46,18 @@
             <li>in the output you might sometimes see '?' before the recipe name - that means that the recipe has not yet been tested but I'm pretty sure it works (anyway that should be a rare occasion)</li>
         </ul>
         <h2>How it works</h2>
-        <p>ingredients format: <code>text Ingredient Name x123</code> - line gets split by spaces, for ingredient name the first and the last elements are thrown away, for ingredient amount it gets the last element and throws away the first symbol</p>
-        <p>dish format: <code>text text Dish Name text 💵 text</code> - detected by having a '💵' in the line</p>
+        <p>Ingredients format: <code>text Ingredient Name x123</code> - line gets split by spaces, for ingredient name the first and the last elements are thrown away, for ingredient amount it gets the last element and throws away the first symbol</p>
+        <p>Dish format: <code>text text Dish Name text 💵 text</code> - detected by having a '💵' in the line</p>
         <p>Recipes json: I have a Google Sheet which I update first, then by using python I convert it into a formatted json and print it out, then copy it and paste into the code</p>
         <h2>Contacts</h2>
-        <p>My discord username: krftn</p>
+        <p>My discord: <a href="https://discord.com/users/694215003347091564">krftn</a></p>
         <div id="credits">
             <h2>Credits</h2>
             <p><a href="https://vgcoder.w3spaces.com/" target="_blank">vg_coder</a> - css and general help</p>
             <p>Penguin Squire - provided some of the recipes</p>
         </div>
     </div></p>
+    <!-- <span style="background-color:#444455; padding-inline: 3px; border-radius: 4px;">spoiler</span> -->
     <script src="js/main.js"></script>
 </body>
 </html>
