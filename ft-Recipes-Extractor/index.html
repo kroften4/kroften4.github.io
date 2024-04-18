@@ -12,7 +12,18 @@
         <h1>Food Truck recipes extractor</h1>
         <form id="extract-recipes-form">
             <textarea required id="user-items-input" placeholder="Paste in your ingredients and dishes here"></textarea>
-            <button type="button" id="send-form-btn">Extract</button>
+            <div id="output-manager">
+                <div id="options">
+                    <label for="">Sort by:</label>
+                    <select id="recipes-sort-select">
+                        <option value="rarity">Rarity</option>
+                        <option value="name">Name</option>
+                    </select>
+                    <input id="hide-secret-recipes-checkbox" type="checkbox" value="checked">
+                    <label for="hide-secret-recipes-checkbox">Hide secret recipes</label>
+                </div>
+                <button type="button" id="send-form-btn">Extract</button>
+            </div>
         </form>
         <div class="fake-textarea" id="output-textarea" placeholder="Result goes here, Try pushing Extract."></div>
         <p id="last-update">Last recipes json update: 15.04.2024 14:30 UTC</p>
