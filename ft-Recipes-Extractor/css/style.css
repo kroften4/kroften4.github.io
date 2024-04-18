@@ -13,13 +13,13 @@ textarea {
 h1 {
 	margin: 0; 
 }
-#send-form-btn {
+/* #send-form-btn {
 	position: absolute; 
 	transform: translate(-325px, 484px);
-}
-html body textarea, html body .fake-textarea {
+} */
+/* html body textarea, html body .fake-textarea {
 	float: left;
-}
+} */
 #user-items-input, #output-textarea {
 	width: 320px; 
 	height: 500px;
@@ -57,15 +57,11 @@ code {
 	font-size: 13.3px;
 	font-family: monospace;
 	overflow-y: scroll;
-	white-space:pre-wrap;
+	white-space: pre-wrap;
 }
 .fake-textarea:empty:not(:focus):before {
 	color: rgb(160, 160, 160);
 	content: attr(placeholder);
-}
-#user-items-input {
-	padding-bottom: 22px;
-	height: 480px;
 }
 textarea::placeholder {
 	color: rgb(160, 160, 160);
@@ -75,12 +71,29 @@ textarea::-webkit-scrollbar, .fake-textarea::-webkit-scrollbar {
 	width: 9px;
 }
 textarea::-webkit-scrollbar-track, .fake-textarea::-webkit-scrollbar-track{
-background: #00000000; 
+	background: #00000000;
 }
 textarea::-webkit-scrollbar-thumb, .fake-textarea::-webkit-scrollbar-thumb{
-background: #888; 
+	background: #888;
 }
 textarea::-webkit-scrollbar-thumb:hover, .fake-textarea::-webkit-scrollbar-thumb:hover{
-background: #666; 
+	background: #666; 
 }
 /* --- */
+#extract-recipes-form {
+	float: left;
+	/* margin-bottom: 2px; */
+}
+#send-form-btn {
+	padding-bottom: 0px;
+}
+#output-manager {
+	border-radius: 4px;
+	background-color: #111122;
+	border: 1px solid lightslategray;
+	padding: 3px;
+	margin-bottom: 4px;
+}
+#output-manager label {
+	font-size: 15px;
+}
