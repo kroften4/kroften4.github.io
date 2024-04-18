@@ -210,6 +210,13 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Coffee": {
+        "ingredients": {
+            "Coffee Beans": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
     "Cookie": {
         "ingredients": {
             "Dough": 1,
@@ -328,6 +335,13 @@ const recipesJson = {
         },
         "rarity": "Basic"
     },
+    "Ice-Cold Lemonade": {
+        "ingredients": {
+            "Ice": 1,
+            "Lemonade": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Iced Tea": {
         "ingredients": {
             "Ice": 1,
@@ -343,7 +357,10 @@ const recipesJson = {
         "rarity": "Basic"
     },
     "Latte": {
-        "ingredients": {},
+        "ingredients": {
+            "Coffee": 1,
+            "Milk": 1
+        },
         "rarity": "Exotic"
     },
     "Le Fishe au Chocolat": {
@@ -490,11 +507,7 @@ const recipesJson = {
         "rarity": "Secret"
     },
     "Pancakes": {
-        "ingredients": {
-            "Batter": 1,
-            "Butter": 1,
-            "Syrup": 1
-        },
+        "ingredients": {},
         "rarity": "Tier 2"
     },
     "Pasta and Meatballs": {
@@ -590,6 +603,13 @@ const recipesJson = {
         },
         "rarity": "Basic"
     },
+    "Seawater": {
+        "ingredients": {
+            "Spices": 2,
+            "Water": 1
+        },
+        "rarity": "Secret"
+    },
     "Stuffed Flatbread": {
         "ingredients": {
             "Flatbread": 1,
@@ -603,7 +623,7 @@ const recipesJson = {
             "Fish": 1,
             "Rice": 2
         },
-        "rarity": "Unknown"
+        "rarity": "Exotic"
     },
     "Syrup": {
         "ingredients": {
@@ -625,6 +645,13 @@ const recipesJson = {
             "Broth": 1,
             "Corn": 1,
             "Meat": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Tea": {
+        "ingredients": {
+            "Tea Leaves": 1,
+            "Water": 1
         },
         "rarity": "Exotic"
     },
@@ -659,17 +686,17 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     }
-}
+};
 
 const recipesLevelsInOrder = [
+    "Secret",
     "Exotic",
     "Tier 3",
     "Tier 2",
     "Tier 1",
     "Basic",
-    "Secret",
     "Unknown"
-]
+];
 
 const testMessage = `🍅 Tomato ×1
 🥚 Egg ×1
@@ -689,17 +716,17 @@ function inputToItemsJson(message) {
     message = message.split('\n');
     for (var i in message) {
         const line = message[i];
-        if (line.includes(':dollar:') || line.includes('💵')){
-            var itemName = line.split(' ').slice(2, -3).join(' ')
-            var amount = 1
+        if (line.includes(':dollar:') || line.includes('💵')) {
+            var itemName = line.split(' ').slice(2, -3).join(' ');
+            var amount = 1;
         } else {
             var itemName = line.split(' ').slice(1, -1).join(' ');
             var amount = parseInt(line.split(' ').slice(-1)[0].slice(1));
-            if (isNaN(amount)) continue
+            if (isNaN(amount)) continue;
         }
-        itemName = itemName.replace(/\*/g, '')
-        if (!(itemName in userItems)) userItems[itemName] = 0
-        userItems[itemName] += amount
+        itemName = itemName.replace(/\*/g, '');
+        if (!(itemName in userItems)) userItems[itemName] = 0;
+        userItems[itemName] += amount;
     }
     return userItems;
 }
@@ -714,61 +741,80 @@ function itemsObjectToString(itemsObject) {
 function sendForm(e) {
     // extract items from input
     const userInput = document.getElementById("user-items-input").value;
-    const userItems = inputToItemsJson(userInput)
-    
+    const userItems = inputToItemsJson(userInput);
+
     // collect awailable recipes
-    let awailableRecipes = {}
+    let awailableRecipes = {};
     for (var recipeName in recipesJson) {
-        const recipe = recipesJson[recipeName]
+        const recipe = recipesJson[recipeName];
         // catching recipes with unfilled ingredients
         if (Object.keys(recipe["ingredients"]).length == 0) {
-            continue
+            continue;
         }
-        let canCook = true
+        hideSecretRecipesCheckbox = document.getElementById("hide-secret-recipes-checkbox");
+        if (hideSecretRecipesCheckbox.checked && recipe["rarity"] == "Secret") {
+            continue;
+        }
+        let canCook = true;
         for (var recipeIngredient in recipe["ingredients"]) {
-            requiredAmount = recipe["ingredients"][recipeIngredient]
-            userAmount = userItems[recipeIngredient]
+            requiredAmount = recipe["ingredients"][recipeIngredient];
+            userAmount = userItems[recipeIngredient];
             if (recipeIngredient in userItems) {
                 if (userAmount < requiredAmount) {
-                    canCook = false
-                    break
+                    canCook = false;
+                    break;
                 }
             } else {
-                canCook = false
-                break
+                canCook = false;
+                break;
             }
         }
         if (canCook) {
-            awailableRecipes[recipeName] = recipe
+            awailableRecipes[recipeName] = recipe;
         }
     }
 
-    // sort awailable recipes by rarity
-    let awailableRecipesArray = []
-    for (var key in  awailableRecipes) {
-        awailableRecipesArray.push([key, awailableRecipes[key]])
+    // sort awailable recipes
+    let awailableRecipesArray = [];
+    for (var key in awailableRecipes) {
+        awailableRecipesArray.push([key, awailableRecipes[key]]);
     }
-    awailableRecipesArray.sort((a, b) => {
-        return recipesLevelsInOrder.indexOf(a[1]["rarity"]) - recipesLevelsInOrder.indexOf(b[1]["rarity"])
-    })
-    let awailableRecipesSorted = {}
+    sortBy = document.getElementById('recipes-sort-select').value;
+    switch (sortBy) {
+        case 'rarity':
+            awailableRecipesArray.sort((a, b) => {
+                return recipesLevelsInOrder.indexOf(a[1]["rarity"]) - recipesLevelsInOrder.indexOf(b[1]["rarity"]);
+            });
+            break;
+        case 'name':
+            awailableRecipesArray.sort();
+            break;
+    
+        default:
+            awailableRecipesArray.sort();
+            break;
+    }
+    let awailableRecipesSorted = {};
     awailableRecipesArray.forEach(element => {
-        awailableRecipesSorted[element[0]] = element[1]
+        awailableRecipesSorted[element[0]] = element[1];
     });
 
     // build response
-    let response = ""
+    let response = "";
     for (var recipeName in awailableRecipesSorted) {
-        const recipe = awailableRecipes[recipeName]
-        response += `• <b>${recipeName}</b> (${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`
+        const recipe = awailableRecipes[recipeName];
+        line = `• <b>${recipeName}</b> (${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
+        if (recipe["rarity"] == "Secret") {
+            line = '<div class="spoiler">' + line + '</div>';
+        }
+        response += line;
     }
     if (!response) {
-        response = "Seems like you can't cook anything out of these ingredients"
+        response = "Seems like you can't cook anything out of these ingredients";
+        if (hideSecretRecipesCheckbox.checked) response += " (secret recipes might've been hidden)";
     }
-    const outputBox = document.getElementById("output-textarea")
-    outputBox.innerHTML = response
+    const outputBox = document.getElementById("output-textarea");
+    outputBox.innerHTML = response;
 }
-
-
 const sendButton = document.getElementById("send-form-btn");
-sendButton.addEventListener("click", sendForm)
+sendButton.addEventListener("click", sendForm);
