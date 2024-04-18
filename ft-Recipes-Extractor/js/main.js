@@ -804,9 +804,6 @@ function sendForm(e) {
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName];
         line = `• <b>${recipeName}</b> (${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
-        if (recipe["rarity"] == "Secret") {
-            line = '<div class="spoiler">' + line + '</div>';
-        }
         response += line;
     }
     if (!response) {
