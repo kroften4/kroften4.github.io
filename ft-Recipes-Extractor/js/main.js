@@ -776,7 +776,7 @@ function parseInputToItemsJson(message) {
             var itemName = line.split(' ').slice(2, -3).join(' ');
             var amount = 1;
         } else {
-            if (line.includes('Exotic')) var amountChunkIndex = -2;
+            if (line.includes('(Exotic)')) var amountChunkIndex = -2;
             else var amountChunkIndex = -1
             var itemName = line.split(' ').slice(1, amountChunkIndex).join(' ');
             var amount = parseInt(line.split(' ').slice(amountChunkIndex)[0].slice(1));
