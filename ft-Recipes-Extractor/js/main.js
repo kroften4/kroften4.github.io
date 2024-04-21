@@ -106,7 +106,7 @@ const recipesJson = {
     },
     "Candy": {
         "ingredients": {
-            "Water": 2
+            "Sugar": 3
         },
         "rarity": "Tier 1"
     },
