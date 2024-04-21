@@ -767,7 +767,7 @@ const testMessage = `🍅 Tomato ×1
 🥬 Lettuce ×1
 :eggnigiri: Egg Nigiri x1`;
 
-function inputToItemsJson(message) {
+function parseInputToItemsJson(message) {
     let userItems = {};
     message = message.split('\n');
     for (var i in message) {
@@ -776,8 +776,10 @@ function inputToItemsJson(message) {
             var itemName = line.split(' ').slice(2, -3).join(' ');
             var amount = 1;
         } else {
-            var itemName = line.split(' ').slice(1, -1).join(' ');
-            var amount = parseInt(line.split(' ').slice(-1)[0].slice(1));
+            if (line.includes('Exotic')) var amountChunkIndex = -2;
+            else var amountChunkIndex = -1
+            var itemName = line.split(' ').slice(1, amountChunkIndex).join(' ');
+            var amount = parseInt(line.split(' ').slice(amountChunkIndex)[0].slice(1));
             if (isNaN(amount)) continue;
         }
         itemName = itemName.replace(/\*/g, '');
@@ -797,7 +799,7 @@ function itemsObjectToString(itemsObject) {
 function sendForm(e) {
     // extract items from input
     const userInput = document.getElementById("user-items-input").value;
-    const userItems = inputToItemsJson(userInput);
+    const userItems = parseInputToItemsJson(userInput);
 
     // collect awailable recipes
     let awailableRecipes = {};
