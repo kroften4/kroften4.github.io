@@ -104,6 +104,12 @@ const recipesJson = {
         },
         "rarity": "Tier 3"
     },
+    "Candy": {
+        "ingredients": {
+            "Water": 2
+        },
+        "rarity": "Tier 1"
+    },
     "Caramel": {
         "ingredients": {
             "Sugar": 2
@@ -140,6 +146,14 @@ const recipesJson = {
         "ingredients": {
             "Cherries": 1,
             "Pie Crust": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Cherry Shaved Ice": {
+        "ingredients": {
+            "Cherries": 1,
+            "Ice": 1,
+            "Syrup": 1
         },
         "rarity": "Exotic"
     },
@@ -329,6 +343,22 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Gingerbread Man": {
+        "ingredients": {
+            "Dough": 1,
+            "Ginger": 1,
+            "Icing": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Hot Dog": {
+        "ingredients": {
+            "Bread": 1,
+            "Meat": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Ice": {
         "ingredients": {
             "Water": 2
@@ -459,6 +489,13 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
+    "Noodles": {
+        "ingredients": {
+            "Dough": 1,
+            "Egg": 1
+        },
+        "rarity": "Tier 1"
+    },
     "NothingBurger": {
         "ingredients": {
             "Bread": 2
@@ -507,7 +544,11 @@ const recipesJson = {
         "rarity": "Secret"
     },
     "Pancakes": {
-        "ingredients": {},
+        "ingredients": {
+            "Batter": 1,
+            "Butter": 1,
+            "Syrup": 1
+        },
         "rarity": "Tier 2"
     },
     "Pasta and Meatballs": {
@@ -623,7 +664,7 @@ const recipesJson = {
             "Fish": 1,
             "Rice": 2
         },
-        "rarity": "Exotic"
+        "rarity": "Tier 1"
     },
     "Syrup": {
         "ingredients": {
@@ -655,6 +696,13 @@ const recipesJson = {
         },
         "rarity": "Exotic"
     },
+    "Toast": {
+        "ingredients": {
+            "Bread": 1,
+            "Butter": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Tomato Sauce": {
         "ingredients": {
             "Tomato": 2
@@ -685,6 +733,14 @@ const recipesJson = {
             "Icing": 1
         },
         "rarity": "Tier 2"
+    },
+    "Water": {
+        "ingredients": {
+            "Cherries": 1,
+            "Ice": 1,
+            "Sugar": 1
+        },
+        "rarity": "Exotic"
     }
 };
 
