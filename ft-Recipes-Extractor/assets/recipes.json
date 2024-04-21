@@ -5,19 +5,13 @@
         },
         "rarity": "Secret"
     },
-    "? Chocolate Shaved Ice": {
+    "Alfredo": {
         "ingredients": {
-            "Chocolate": 1,
-            "Ice": 1,
-            "Syrup": 1
+            "Cheese": 1,
+            "Milk": 1,
+            "Noodles": 1
         },
         "rarity": "Tier 2"
-    },
-    "? Packed Ice": {
-        "ingredients": {
-            "Ice": 2
-        },
-        "rarity": "Secret"
     },
     "Anchovy Pizza": {
         "ingredients": {
@@ -32,13 +26,20 @@
             "Onion": 1,
             "Tortilla": 1
         },
-        "rarity": "Unknown"
+        "rarity": "Tier 1"
     },
     "Bacon": {
         "ingredients": {
             "Meat": 2
         },
         "rarity": "Basic"
+    },
+    "Bagel": {
+        "ingredients": {
+            "Bread": 1,
+            "Cream Cheese": 1
+        },
+        "rarity": "Tier 3"
     },
     "Baguette": {
         "ingredients": {
@@ -103,6 +104,12 @@
         },
         "rarity": "Tier 3"
     },
+    "Candy": {
+        "ingredients": {
+            "Water": 2
+        },
+        "rarity": "Tier 1"
+    },
     "Caramel": {
         "ingredients": {
             "Sugar": 2
@@ -126,9 +133,9 @@
         "ingredients": {
             "Cheese": 2
         },
-        "rarity": "Tier 3"
+        "rarity": "Tier 2"
     },
-    "CheeseBurger": {
+    "Cheeseburger": {
         "ingredients": {
             "Burger": 1,
             "Cheese": 1
@@ -142,12 +149,27 @@
         },
         "rarity": "Exotic"
     },
+    "Cherry Shaved Ice": {
+        "ingredients": {
+            "Cherries": 1,
+            "Ice": 1,
+            "Syrup": 1
+        },
+        "rarity": "Exotic"
+    },
     "Chocolate Cake": {
         "ingredients": {
             "Batter": 2,
             "Chocolate Icing": 1
         },
         "rarity": "Tier 3"
+    },
+    "Chocolate Cupcake": {
+        "ingredients": {
+            "Batter": 1,
+            "Chocolate Icing": 1
+        },
+        "rarity": "Tier 2"
     },
     "Chocolate Donut": {
         "ingredients": {
@@ -186,6 +208,43 @@
         },
         "rarity": "Tier 2"
     },
+    "Chocolate Shaved Ice": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Ice": 1,
+            "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Cinnamon Rolls": {
+        "ingredients": {
+            "Dough": 1,
+            "Icing": 1,
+            "Spices": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Coffee": {
+        "ingredients": {
+            "Coffee Beans": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Cookie": {
+        "ingredients": {
+            "Dough": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Cream Cheese": {
+        "ingredients": {
+            "Cheese": 1,
+            "Milk": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Croissant": {
         "ingredients": {
             "Butter": 2,
@@ -198,6 +257,14 @@
             "Broth": 1,
             "Rice": 1,
             "Spices": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Dango": {
+        "ingredients": {
+            "Dough": 1,
+            "Rice": 1,
+            "Syrup": 1
         },
         "rarity": "Tier 1"
     },
@@ -245,7 +312,11 @@
         "rarity": "Tier 1"
     },
     "Flatbread": {
-        "ingredients": {},
+        "ingredients": {
+            "Dough": 1,
+            "Flour": 1,
+            "Milk": 1
+        },
         "rarity": "Tier 1"
     },
     "French Fries": {
@@ -254,13 +325,52 @@
             "Potato": 1,
             "Spices": 1
         },
-        "rarity": "Unknown"
+        "rarity": "Tier 1"
+    },
+    "French Toast": {
+        "ingredients": {
+            "Egg": 1,
+            "Syrup": 1,
+            "Toast": 1
+        },
+        "rarity": "Tier 3"
+    },
+    "Fried Meat": {
+        "ingredients": {
+            "Egg": 1,
+            "Flour": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 1"
+    },
+    "Gingerbread Man": {
+        "ingredients": {
+            "Dough": 1,
+            "Ginger": 1,
+            "Icing": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Hot Dog": {
+        "ingredients": {
+            "Bread": 1,
+            "Meat": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 2"
     },
     "Ice": {
         "ingredients": {
             "Water": 2
         },
         "rarity": "Basic"
+    },
+    "Ice-Cold Lemonade": {
+        "ingredients": {
+            "Ice": 1,
+            "Lemonade": 1
+        },
+        "rarity": "Tier 2"
     },
     "Iced Tea": {
         "ingredients": {
@@ -277,7 +387,10 @@
         "rarity": "Basic"
     },
     "Latte": {
-        "ingredients": {},
+        "ingredients": {
+            "Coffee": 1,
+            "Milk": 1
+        },
         "rarity": "Exotic"
     },
     "Le Fishe au Chocolat": {
@@ -293,6 +406,14 @@
             "Lemon Icing": 1
         },
         "rarity": "Tier 3"
+    },
+    "Lemon Cookie": {
+        "ingredients": {
+            "Dough": 1,
+            "Lemon": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 2"
     },
     "Lemon Cupcake": {
         "ingredients": {
@@ -345,7 +466,14 @@
             "Sugar": 1,
             "Water": 1
         },
-        "rarity": "Unknown"
+        "rarity": "Tier 1"
+    },
+    "Mac and Cheese": {
+        "ingredients": {
+            "Cheese": 1,
+            "Noodles": 1
+        },
+        "rarity": "Tier 2"
     },
     "Mushroom Pizza": {
         "ingredients": {
@@ -360,6 +488,13 @@
             "Tortilla Chips": 1
         },
         "rarity": "Tier 2"
+    },
+    "Noodles": {
+        "ingredients": {
+            "Dough": 1,
+            "Egg": 1
+        },
+        "rarity": "Tier 1"
     },
     "NothingBurger": {
         "ingredients": {
@@ -402,11 +537,24 @@
         },
         "rarity": "Tier 1"
     },
+    "Packed Ice": {
+        "ingredients": {
+            "Ice": 2
+        },
+        "rarity": "Secret"
+    },
     "Pancakes": {
         "ingredients": {
             "Batter": 1,
             "Butter": 1,
             "Syrup": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Pasta and Meatballs": {
+        "ingredients": {
+            "Meat": 1,
+            "Pasta with Sauce": 1
         },
         "rarity": "Tier 2"
     },
@@ -430,6 +578,22 @@
             "Water": 1
         },
         "rarity": "Tier 1"
+    },
+    "Pineapple Soda": {
+        "ingredients": {
+            "Pineapple": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Pizza": {
+        "ingredients": {
+            "Cheese": 1,
+            "Dough": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 2"
     },
     "Popcorn": {
         "ingredients": {
@@ -480,6 +644,28 @@
         },
         "rarity": "Basic"
     },
+    "Seawater": {
+        "ingredients": {
+            "Spices": 2,
+            "Water": 1
+        },
+        "rarity": "Secret"
+    },
+    "Stuffed Flatbread": {
+        "ingredients": {
+            "Flatbread": 1,
+            "Lettuce": 1,
+            "Meat": 1
+        },
+        "rarity": "Tier 2"
+    },
+    "Sushi Roll": {
+        "ingredients": {
+            "Fish": 1,
+            "Rice": 2
+        },
+        "rarity": "Tier 1"
+    },
     "Syrup": {
         "ingredients": {
             "Sugar": 1,
@@ -502,6 +688,20 @@
             "Meat": 1
         },
         "rarity": "Exotic"
+    },
+    "Tea": {
+        "ingredients": {
+            "Tea Leaves": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Toast": {
+        "ingredients": {
+            "Bread": 1,
+            "Butter": 1
+        },
+        "rarity": "Tier 2"
     },
     "Tomato Sauce": {
         "ingredients": {
@@ -533,5 +733,13 @@
             "Icing": 1
         },
         "rarity": "Tier 2"
+    },
+    "Water": {
+        "ingredients": {
+            "Cherries": 1,
+            "Ice": 1,
+            "Sugar": 1
+        },
+        "rarity": "Exotic"
     }
 }
