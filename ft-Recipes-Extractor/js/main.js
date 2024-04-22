@@ -734,7 +734,7 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
-    "Water": {
+    "Cherry Ice Pop": {
         "ingredients": {
             "Cherries": 1,
             "Ice": 1,
