@@ -1,10 +1,4 @@
 const recipesJson = {
-    "Blue Ice": {
-        "ingredients": {
-            "Packed Ice": 2
-        },
-        "rarity": "Secret"
-    },
     "Alfredo": {
         "ingredients": {
             "Cheese": 1,
@@ -69,6 +63,12 @@ const recipesJson = {
             "Olive Oil": 1
         },
         "rarity": "Tier 1"
+    },
+    "Blue Ice": {
+        "ingredients": {
+            "Packed Ice": 2
+        },
+        "rarity": "Secret"
     },
     "Boba Tea": {
         "ingredients": {
@@ -177,6 +177,14 @@ const recipesJson = {
             "Cherries": 1,
             "Ice": 1,
             "Syrup": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Cherry Soda": {
+        "ingredients": {
+            "Cherries": 1,
+            "Sugar": 1,
+            "Water": 1
         },
         "rarity": "Exotic"
     },
