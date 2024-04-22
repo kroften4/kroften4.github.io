@@ -767,7 +767,7 @@ const testMessage = `🍅 Tomato ×1
 🥬 Lettuce ×1
 :eggnigiri: Egg Nigiri x1`;
 
-function parseInputToItemsJson(message) {
+function parseToItemsJson(message) {
     let userItems = {};
     message = message.split('\n');
     for (var i in message) {
@@ -799,7 +799,7 @@ function itemsObjectToString(itemsObject) {
 function sendForm(e) {
     // extract items from input
     const userInput = document.getElementById("user-items-input").value;
-    const userItems = parseInputToItemsJson(userInput);
+    const userItems = parseToItemsJson(userInput);
 
     // collect awailable recipes
     let awailableRecipes = {};
