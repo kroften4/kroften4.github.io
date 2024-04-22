@@ -1,5 +1,5 @@
 const recipesJson = {
-    "? Blue Ice": {
+    "Blue Ice": {
         "ingredients": {
             "Packed Ice": 2
         },
@@ -19,6 +19,13 @@ const recipesJson = {
             "Pizza": 1
         },
         "rarity": "Tier 3"
+    },
+    "Apple Pie": {
+        "ingredients": {
+            "Apple": 1,
+            "Pie Crust": 1
+        },
+        "rarity": "Tier 2"
     },
     "Asada Taco": {
         "ingredients": {
@@ -91,6 +98,14 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
+    "Burrito": {
+        "ingredients": {
+            "Beans": 1,
+            "Lettuce": 1,
+            "Tortilla": 1
+        },
+        "rarity": "Exotic"
+    },
     "Butter": {
         "ingredients": {
             "Milk": 2
@@ -141,6 +156,14 @@ const recipesJson = {
             "Cheese": 1
         },
         "rarity": "Tier 3"
+    },
+    "Cherry Ice Pop": {
+        "ingredients": {
+            "Cherries": 1,
+            "Ice": 1,
+            "Sugar": 1
+        },
+        "rarity": "Exotic"
     },
     "Cherry Pie": {
         "ingredients": {
@@ -216,6 +239,14 @@ const recipesJson = {
         },
         "rarity": "Tier 2"
     },
+    "Chocolate-Chip Cookie": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Dough": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Cinnamon Rolls": {
         "ingredients": {
             "Dough": 1,
@@ -226,7 +257,7 @@ const recipesJson = {
     },
     "Coffee": {
         "ingredients": {
-            "Coffee Beans": 1,
+            "Beans": 1,
             "Water": 1
         },
         "rarity": "Exotic"
@@ -424,7 +455,7 @@ const recipesJson = {
     },
     "Lemon Ice Cream": {
         "ingredients": {
-            "Icecream": 1,
+            "Ice Cream": 1,
             "Lemon": 1
         },
         "rarity": "Tier 2"
@@ -733,14 +764,6 @@ const recipesJson = {
             "Icing": 1
         },
         "rarity": "Tier 2"
-    },
-    "Cherry Ice Pop": {
-        "ingredients": {
-            "Cherries": 1,
-            "Ice": 1,
-            "Sugar": 1
-        },
-        "rarity": "Exotic"
     }
 };
 
@@ -753,19 +776,6 @@ const recipesLevelsInOrder = [
     "Basic",
     "Unknown"
 ];
-
-const testMessage = `🍅 Tomato ×1
-🥚 Egg ×1
-:sugar: Sugar ×4
-🧂 Spices ×1
-🥩 Meat ×5
-🐟 Fish ×1
-🧅 Onion ×4
-🍫 Chocolate ×2
-🚰 Water ×1
-🍋 Lemon ×2
-🥬 Lettuce ×1
-:eggnigiri: Egg Nigiri x1`;
 
 function parseToItemsJson(message) {
     let userItems = {};

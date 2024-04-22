@@ -1,5 +1,5 @@
 {
-    "? Blue Ice": {
+    "Blue Ice": {
         "ingredients": {
             "Packed Ice": 2
         },
@@ -19,6 +19,13 @@
             "Pizza": 1
         },
         "rarity": "Tier 3"
+    },
+    "Apple Pie": {
+        "ingredients": {
+            "Apple": 1,
+            "Pie Crust": 1
+        },
+        "rarity": "Tier 2"
     },
     "Asada Taco": {
         "ingredients": {
@@ -91,6 +98,14 @@
         },
         "rarity": "Tier 2"
     },
+    "Burrito": {
+        "ingredients": {
+            "Beans": 1,
+            "Lettuce": 1,
+            "Tortilla": 1
+        },
+        "rarity": "Exotic"
+    },
     "Butter": {
         "ingredients": {
             "Milk": 2
@@ -141,6 +156,14 @@
             "Cheese": 1
         },
         "rarity": "Tier 3"
+    },
+    "Cherry Ice Pop": {
+        "ingredients": {
+            "Cherries": 1,
+            "Ice": 1,
+            "Sugar": 1
+        },
+        "rarity": "Exotic"
     },
     "Cherry Pie": {
         "ingredients": {
@@ -216,6 +239,14 @@
         },
         "rarity": "Tier 2"
     },
+    "Chocolate-Chip Cookie": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Dough": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Cinnamon Rolls": {
         "ingredients": {
             "Dough": 1,
@@ -226,7 +257,7 @@
     },
     "Coffee": {
         "ingredients": {
-            "Coffee Beans": 1,
+            "Beans": 1,
             "Water": 1
         },
         "rarity": "Exotic"
@@ -424,7 +455,7 @@
     },
     "Lemon Ice Cream": {
         "ingredients": {
-            "Icecream": 1,
+            "Ice Cream": 1,
             "Lemon": 1
         },
         "rarity": "Tier 2"
@@ -733,13 +764,5 @@
             "Icing": 1
         },
         "rarity": "Tier 2"
-    },
-    "Cherry Ice Pop": {
-        "ingredients": {
-            "Cherries": 1,
-            "Ice": 1,
-            "Sugar": 1
-        },
-        "rarity": "Exotic"
     }
 }
