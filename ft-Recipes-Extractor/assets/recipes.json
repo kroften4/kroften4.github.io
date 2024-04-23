@@ -705,6 +705,13 @@
         },
         "rarity": "Tier 1"
     },
+    "Sushi Roll (1)": {
+        "ingredients": {
+            "Avocado": 1,
+            "Egg Nigiri": 1
+        },
+        "rarity": "Exotic"
+    },
     "Syrup": {
         "ingredients": {
             "Sugar": 1,
