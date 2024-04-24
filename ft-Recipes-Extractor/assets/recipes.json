@@ -307,6 +307,14 @@
         },
         "rarity": "Tier 1"
     },
+    "Deluxe Cheesburger": {
+        "ingredients": {
+            "Cheeseburger": 1,
+            "Lettuce": 1,
+            "Tomato": 1
+        },
+        "rarity": "Tier 3"
+    },
     "Donut": {
         "ingredients": {
             "Dough": 1,
@@ -595,14 +603,14 @@
             "Meat": 1,
             "Pasta with Sauce": 1
         },
-        "rarity": "Tier 2"
+        "rarity": "Tier 3"
     },
     "Pasta with Sauce": {
         "ingredients": {
             "Noodles": 1,
             "Tomato Sauce": 1
         },
-        "rarity": "Tier 1"
+        "rarity": "Tier 2"
     },
     "Pepperoni Pizza": {
         "ingredients": {
