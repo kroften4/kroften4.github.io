@@ -390,6 +390,14 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Ginger Ale": {
+        "ingredients": {
+            "Ginger": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
     "Gingerbread Man": {
         "ingredients": {
             "Dough": 1,
@@ -411,6 +419,10 @@ const recipesJson = {
             "Water": 2
         },
         "rarity": "Basic"
+    },
+    "Ice Cream": {
+        "ingredients": {},
+        "rarity": "Tier 1"
     },
     "Ice-Cold Lemonade": {
         "ingredients": {
