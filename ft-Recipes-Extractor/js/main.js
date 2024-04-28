@@ -19,7 +19,7 @@ const recipesJson = {
             "Apple": 1,
             "Pie Crust": 1
         },
-        "rarity": "Tier 2"
+        "rarity": "Exotic"
     },
     "Asada Taco": {
         "ingredients": {
@@ -216,6 +216,13 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Chocolate Ice Cream": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Ice Cream": 1
+        },
+        "rarity": "Tier 2"
+    },
     "Chocolate Ice Pop": {
         "ingredients": {
             "Chocolate": 1,
@@ -307,7 +314,7 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
-    "Deluxe Cheesburger": {
+    "Deluxe Cheeseburger": {
         "ingredients": {
             "Cheeseburger": 1,
             "Lettuce": 1,
