@@ -284,6 +284,10 @@
         },
         "rarity": "Tier 1"
     },
+    "Copypasta": {
+        "ingredients": {},
+        "rarity": "Secret"
+    },
     "Cream Cheese": {
         "ingredients": {
             "Cheese": 1,
@@ -540,6 +544,14 @@
             "Noodles": 1
         },
         "rarity": "Tier 2"
+    },
+    "Mocha": {
+        "ingredients": {
+            "Chocolate": 1,
+            "Coffee": 1,
+            "Milk": 1
+        },
+        "rarity": "Exotic"
     },
     "Mushroom Pizza": {
         "ingredients": {
