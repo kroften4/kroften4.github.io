@@ -219,7 +219,7 @@
     "Chocolate Ice Cream": {
         "ingredients": {
             "Chocolate": 1,
-            "Ice Cream": 1
+            "Vanilla Ice Cream": 1
         },
         "rarity": "Tier 2"
     },
@@ -431,10 +431,6 @@
         },
         "rarity": "Basic"
     },
-    "Ice Cream": {
-        "ingredients": {},
-        "rarity": "Tier 1"
-    },
     "Ice-Cold Lemonade": {
         "ingredients": {
             "Ice": 1,
@@ -494,8 +490,8 @@
     },
     "Lemon Ice Cream": {
         "ingredients": {
-            "Ice Cream": 1,
-            "Lemon": 1
+            "Lemon": 1,
+            "Vanilla Ice Cream": 1
         },
         "rarity": "Tier 2"
     },
@@ -818,5 +814,13 @@
             "Icing": 1
         },
         "rarity": "Tier 2"
+    },
+    "Vanilla Ice Cream": {
+        "ingredients": {
+            "Ice": 1,
+            "Milk": 1,
+            "Sugar": 1
+        },
+        "rarity": "Tier 1"
     }
 }
