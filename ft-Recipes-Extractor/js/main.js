@@ -927,19 +927,19 @@ function sendForm(e) {
 
     // build response
     const rarityEmojisPaths = {
-        "Basic": "assets/basic_recipe.webp",
-        "Tier 1": "assets/tier1_recipe.webp",
-        "Tier 2": "assets/tier2_recipe.webp",
-        "Tier 3": "assets/tier3_recipe.webp",
-        "Exotic": "assets/exotic_recipe.webp",
-        "Secret": "assets/secret_recipe.webp",
-        "Unknown": "assets/unknown_recipe.webp"
+        "Basic": "assets/rarity-emojis/basic_recipe.webp",
+        "Tier 1": "assets/rarity-emojis/tier1_recipe.webp",
+        "Tier 2": "assets/rarity-emojis/tier2_recipe.webp",
+        "Tier 3": "assets/rarity-emojis/tier3_recipe.webp",
+        "Exotic": "assets/rarity-emojis/exotic_recipe.webp",
+        "Secret": "assets/rarity-emojis/secret_recipe.webp",
+        "Unknown": "assets/rarity-emojis/unknown_recipe.webp"
     }
     let response = "";
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName];
-        emojiElement = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`
-        line = `• <b>${recipeName}</b> (${emojiElement}${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
+        rarityEmoji = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`
+        line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
         response += line;
     }
     if (!response) {
