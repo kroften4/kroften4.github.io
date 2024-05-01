@@ -29,6 +29,13 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Avocado Roll": {
+        "ingredients": {
+            "Avocado": 1,
+            "Egg Nigiri": 1
+        },
+        "rarity": "Exotic"
+    },
     "Bacon": {
         "ingredients": {
             "Meat": 2
@@ -739,13 +746,6 @@ const recipesJson = {
             "Rice": 2
         },
         "rarity": "Tier 1"
-    },
-    "Sushi Roll (1)": {
-        "ingredients": {
-            "Avocado": 1,
-            "Egg Nigiri": 1
-        },
-        "rarity": "Exotic"
     },
     "Syrup": {
         "ingredients": {
