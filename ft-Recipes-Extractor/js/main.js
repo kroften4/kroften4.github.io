@@ -938,7 +938,8 @@ function sendForm(e) {
     let response = "";
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName];
-        line = `• <b>${recipeName}</b> (<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
+        emojiElement = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`
+        line = `• <b>${recipeName}</b> (${emojiElement}${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
         response += line;
     }
     if (!response) {
