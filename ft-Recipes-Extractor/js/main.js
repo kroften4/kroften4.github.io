@@ -835,6 +835,25 @@ const recipesLevelsInOrder = [
     "Unknown"
 ];
 
+const exoticIngredients = [
+    "Apple",
+    "Corn",
+    "Cherries",
+    "Mushroom",
+    "Pineapple",
+    "Beans",
+    "Tea Leaves",
+    "Ginger",
+    "Avocado"
+]
+
+const priceBonuses = {
+    "cook": 10,
+    "normalIng": 40,
+    "exoticIng": 200,
+    "quality": 0.15
+}
+
 function parseToItemsJson(message) {
     let userItems = {};
     message = message.split('\n');
@@ -862,6 +881,58 @@ function itemsObjectToString(itemsObject) {
     for (var itemName in itemsObject)
         result.push(`${itemName} x${itemsObject[itemName]}`);
     return result.join(', ');
+}
+
+function unpackDish(dishName, cookAmount = 0) {
+    cookAmount += 1
+    let unpacked = {}
+    for (const ing in recipesJson[dishName]["ingredients"]) {
+        if (ing in recipesJson) {
+            const deepUnpacked = unpackDish(ing)
+            cookAmount += deepUnpacked["cookAmount"]
+            for (const deepIngName in deepUnpacked["ings"]) {
+                if (!unpacked.hasOwnProperty(deepIngName))
+                    unpacked[deepIngName] = 0
+                unpacked[deepIngName] += deepUnpacked["ings"][deepIngName]
+            }
+        } else {
+            if (!unpacked.hasOwnProperty(ing))
+                unpacked[ing] = 0
+            unpacked[ing] += recipesJson[dishName]["ingredients"][ing]
+    }
+    }
+    return {"ings": unpacked, "cookAmount": cookAmount}
+}
+
+Object.filter = (obj, predicate) => 
+                  Object.fromEntries(Object.entries(obj).filter(predicate));
+
+function normalAndExoticIngsSeparated(unpackedDish) {
+    let normal = Object.filter(unpackedDish, (ing) => !exoticIngredients.includes(ing[0]))
+    let exotic = Object.filter(unpackedDish, (ing) => exoticIngredients.includes(ing[0]))
+    return {"normal": normal, "exotic": exotic}
+}
+
+function dishBaseValue(dishName) {
+    unpacked = unpackDish(dishName)
+    const ingsSeparated = normalAndExoticIngsSeparated(unpacked["ings"])
+    function sumValues(obj) {
+        let sum = 0
+        Object.entries(obj).forEach((entry) => sum += entry[1])
+        return sum
+    }
+    const normalIngsAmnt = sumValues(ingsSeparated["normal"])
+    const exoticIngsAmnt = sumValues(ingsSeparated["exotic"])
+    baseValue = priceBonuses["normalIng"] * normalIngsAmnt +
+                priceBonuses["exoticIng"] * exoticIngsAmnt +
+                priceBonuses["cook"] * unpacked["cookAmount"]
+    return baseValue
+}
+
+function dishPrice(dishName) {
+    // price for level 1
+    baseValue = dishBaseValue(dishName)
+    return baseValue + priceBonuses["quality"] * baseValue
 }
 
 function sendForm(e) {
@@ -915,7 +986,16 @@ function sendForm(e) {
         case 'name':
             awailableRecipesArray.sort();
             break;
-    
+        case 'baseval':
+            awailableRecipesArray.sort((a, b) => {
+                return dishBaseValue(b[0]) - dishBaseValue(a[0])
+            });
+            break;
+        case 'price':
+            awailableRecipesArray.sort((a, b) => {
+                return dishPrice(b[0]) - dishPrice(a[0])
+            });
+            break;
         default:
             awailableRecipesArray.sort();
             break;
