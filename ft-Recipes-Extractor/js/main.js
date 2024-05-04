@@ -889,11 +889,11 @@ function unpackDish(dishName, cookAmount = 0) {
     for (const ing in recipesJson[dishName]["ingredients"]) {
         if (ing in recipesJson) {
             const deepUnpacked = unpackDish(ing)
-            cookAmount += deepUnpacked["cookAmount"]
+            cookAmount += deepUnpacked["cookAmount"] * recipesJson[dishName]["ingredients"][ing]
             for (const deepIngName in deepUnpacked["ings"]) {
                 if (!unpacked.hasOwnProperty(deepIngName))
                     unpacked[deepIngName] = 0
-                unpacked[deepIngName] += deepUnpacked["ings"][deepIngName]
+                unpacked[deepIngName] += deepUnpacked["ings"][deepIngName] * recipesJson[dishName]["ingredients"][ing]
             }
         } else {
             if (!unpacked.hasOwnProperty(ing))
@@ -1019,7 +1019,8 @@ function sendForm(e) {
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName];
         rarityEmoji = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`
-        line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]} 💵${dishBaseValue(recipeName)}):\n   ${itemsObjectToString(recipe["ingredients"])}\n`;
+        line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]} 💵${dishBaseValue(recipeName)}):\n` +
+               `   ${itemsObjectToString(recipe["ingredients"])}\n`;
         response += line;
     }
     if (!response) {
