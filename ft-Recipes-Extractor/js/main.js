@@ -879,7 +879,7 @@ function parseToItemsJson(message) {
 function itemsObjectToString(itemsObject) {
     let result = [];
     for (var itemName in itemsObject)
-        result.push(`${itemName} x${itemsObject[itemName]}`);
+        result.push(`${itemName} ×${itemsObject[itemName]}`);
     return result.join(', ');
 }
 
@@ -1019,7 +1019,7 @@ function sendForm(e) {
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName];
         rarityEmoji = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`
-        line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]}): ${itemsObjectToString(recipe["ingredients"])}\n`;
+        line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]} 💵${dishBaseValue(recipeName)}):\n   ${itemsObjectToString(recipe["ingredients"])}\n`;
         response += line;
     }
     if (!response) {
