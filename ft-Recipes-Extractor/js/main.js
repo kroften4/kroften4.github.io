@@ -14,6 +14,14 @@ const recipesJson = {
         },
         "rarity": "Tier 3"
     },
+    "Apple Juice": {
+        "ingredients": {
+            "Apple": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
     "Apple Pie": {
         "ingredients": {
             "Apple": 1,
@@ -653,6 +661,13 @@ const recipesJson = {
         },
         "rarity": "Tier 3"
     },
+    "Philadelphia Roll": {
+        "ingredients": {
+            "Avocado Roll": 1,
+            "Cream Cheese": 1
+        },
+        "rarity": "Exotic"
+    },
     "Pie Crust": {
         "ingredients": {
             "Dough": 1,
@@ -929,10 +944,9 @@ function dishBaseValue(dishName) {
     return baseValue
 }
 
-function dishPrice(dishName) {
-    // price for level 1
+function dishPrice(dishName, dishLevel=2) {
     baseValue = dishBaseValue(dishName)
-    return baseValue + priceBonuses["quality"] * baseValue
+    return baseValue + Math.round(baseValue * (dishLevel - 1) * priceBonuses["quality"])
 }
 
 function sendForm(e) {

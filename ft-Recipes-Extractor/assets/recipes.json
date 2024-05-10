@@ -14,6 +14,14 @@
         },
         "rarity": "Tier 3"
     },
+    "Apple Juice": {
+        "ingredients": {
+            "Apple": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
     "Apple Pie": {
         "ingredients": {
             "Apple": 1,
@@ -652,6 +660,13 @@
             "Pizza": 1
         },
         "rarity": "Tier 3"
+    },
+    "Philadelphia Roll": {
+        "ingredients": {
+            "Avocado Roll": 1,
+            "Cream Cheese": 1
+        },
+        "rarity": "Exotic"
     },
     "Pie Crust": {
         "ingredients": {
