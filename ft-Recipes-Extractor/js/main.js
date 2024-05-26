@@ -300,7 +300,9 @@ const recipesJson = {
         "rarity": "Tier 1"
     },
     "Copypasta": {
-        "ingredients": {},
+        "ingredients": {
+            "Pasta with Sauce": 2
+        },
         "rarity": "Secret"
     },
     "Cream Cheese": {
