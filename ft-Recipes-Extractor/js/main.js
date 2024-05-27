@@ -677,6 +677,13 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Pineapple Pizza": {
+        "ingredients": {
+            "Pineapple": 1,
+            "Pizza": 1
+        },
+        "rarity": "Exotic"
+    },
     "Pineapple Soda": {
         "ingredients": {
             "Pineapple": 1,
