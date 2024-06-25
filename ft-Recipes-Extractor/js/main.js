@@ -1,3 +1,10 @@
+/* TODO:
+- Add new page or smth which will contain some useful info 
+    (lists of all basic and exotic ingredients, recipes, ingredients sorted by usage frequency...; 
+    formulas for price evaluation)
+- Centralise layout (how tf)
+*/
+
 const recipesJson = {
     "Alfredo": {
         "ingredients": {
@@ -91,6 +98,13 @@ const recipesJson = {
             "Tea": 1
         },
         "rarity": "Exotic"
+    },
+    "Boiled Egg": {
+        "ingredients": {
+            "Egg": 1,
+            "Water": 1
+        },
+        "rarity": "Basic"
     },
     "Bread": {
         "ingredients": {
@@ -418,6 +432,14 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Fried Shrimp": {
+        "ingredients": {
+            "Egg": 1,
+            "Flour": 1,
+            "Shrimp": 1
+        },
+        "rarity": "Tier 1"
+    },
     "Ginger Ale": {
         "ingredients": {
             "Ginger": 1,
@@ -593,9 +615,15 @@ const recipesJson = {
         },
         "rarity": "Secret"
     },
+    "Nuclear Power Plant": {
+        "ingredients": {
+            "Uranium": 2
+        },
+        "rarity": "Secret"
+    },
     "Oden": {
         "ingredients": {
-            "Egg": 1,
+            "Boiled Egg": 1,
             "Fish": 1,
             "Meat": 1
         },
@@ -648,13 +676,6 @@ const recipesJson = {
             "Pasta with Sauce": 1
         },
         "rarity": "Tier 3"
-    },
-    "Pasta with Sauce": {
-        "ingredients": {
-            "Noodles": 1,
-            "Tomato Sauce": 1
-        },
-        "rarity": "Tier 2"
     },
     "Pepperoni Pizza": {
         "ingredients": {
@@ -755,6 +776,20 @@ const recipesJson = {
             "Water": 1
         },
         "rarity": "Secret"
+    },
+    "Shrimp": {
+        "ingredients": {
+            "Fish": 1,
+            "Water": 1
+        },
+        "rarity": "Basic"
+    },
+    "Spaghetti": {
+        "ingredients": {
+            "Noodles": 1,
+            "Tomato Sauce": 1
+        },
+        "rarity": "Tier 2"
     },
     "Stuffed Flatbread": {
         "ingredients": {
