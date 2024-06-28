@@ -3,6 +3,7 @@
     (lists of all basic and exotic ingredients, recipes, ingredients sorted by usage frequency...; 
     formulas for price evaluation)
 - Centralise layout (how tf)
+- Add warnings if a string could not be parsed
 */
 
 const recipesJson = {
@@ -904,99 +905,112 @@ const exoticIngredients = [
     "Tea Leaves",
     "Ginger",
     "Avocado"
-]
+];
 
 const priceBonuses = {
     "cook": 10,
     "normalIng": 40,
     "exoticIng": 200,
     "quality": 0.15
+};
+
+function parseToItem(line) {
+    line = line.replace(/\*/g, '');
+    if (line.includes(":dollar:") || line.includes('💵')) {
+        let priceIndex = -3;
+        if (line.includes("ID")) priceIndex -= 2;
+        const itemName = line.split(" ").slice(2, priceIndex).join(" ");
+        const amount = 1;
+        return {itemName: itemName, amount: amount};
+    } else {
+        let amountIndex = -1;
+        if (line.includes("(ID:")) amountIndex -= 2;
+        if (line.includes("(Exotic)") || line.includes("(Honey)") ) amountIndex--;
+        const itemName = line.split(" ").slice(1, amountIndex).join(" ");
+        const amount = parseInt(line.split(" ").slice(amountIndex)[0].slice(1));
+        return {itemName: itemName, amount: amount};
+    }
 }
 
 function parseToItemsJson(message) {
     let userItems = {};
+    let erroredLines = {};
     message = message.split('\n');
-    for (var i in message) {
+    for (let i in message) {
         const line = message[i];
-        if (line.includes(':dollar:') || line.includes('💵')) {
-            var itemName = line.split(' ').slice(2, -3).join(' ');
-            var amount = 1;
-        } else {
-            if (line.includes('(Exotic)')) var amountChunkIndex = -2;
-            else var amountChunkIndex = -1
-            var itemName = line.split(' ').slice(1, amountChunkIndex).join(' ');
-            var amount = parseInt(line.split(' ').slice(amountChunkIndex)[0].slice(1));
-            if (isNaN(amount)) continue;
-        }
-        itemName = itemName.replace(/\*/g, '');
-        if (!(itemName in userItems)) userItems[itemName] = 0;
-        userItems[itemName] += amount;
+        item = parseToItem(line);
+        if (item.itemName == "" && isNaN(item.amount)) erroredLines[i] = "item name and amount";
+        else if (item.itemName == "") erroredLines[i] = "item name";
+        else if (isNaN(item.amount)) erroredLines[i] = "amount";
+
+        if (!(item.itemName in userItems)) userItems[item.itemName] = 0;
+        userItems[item.itemName] += item.amount;
     }
-    return userItems;
+    return {userItems: userItems, erroredLines: erroredLines};
 }
 
 function itemsObjectToString(itemsObject) {
     let result = [];
-    for (var itemName in itemsObject)
+    for (let itemName in itemsObject)
         result.push(`${itemName} ×${itemsObject[itemName]}`);
     return result.join(', ');
 }
 
 function unpackDish(dishName, cookAmount = 0) {
-    cookAmount += 1
-    let unpacked = {}
+    cookAmount += 1;
+    let unpacked = {};
     for (const ing in recipesJson[dishName]["ingredients"]) {
         if (ing in recipesJson) {
-            const deepUnpacked = unpackDish(ing)
-            cookAmount += deepUnpacked["cookAmount"] * recipesJson[dishName]["ingredients"][ing]
+            const deepUnpacked = unpackDish(ing);
+            cookAmount += deepUnpacked["cookAmount"] * recipesJson[dishName]["ingredients"][ing];
             for (const deepIngName in deepUnpacked["ings"]) {
                 if (!unpacked.hasOwnProperty(deepIngName))
-                    unpacked[deepIngName] = 0
-                unpacked[deepIngName] += deepUnpacked["ings"][deepIngName] * recipesJson[dishName]["ingredients"][ing]
+                    unpacked[deepIngName] = 0;
+                unpacked[deepIngName] += deepUnpacked["ings"][deepIngName] * recipesJson[dishName]["ingredients"][ing];
             }
         } else {
             if (!unpacked.hasOwnProperty(ing))
-                unpacked[ing] = 0
-            unpacked[ing] += recipesJson[dishName]["ingredients"][ing]
+                unpacked[ing] = 0;
+            unpacked[ing] += recipesJson[dishName]["ingredients"][ing];
+        }
     }
-    }
-    return {"ings": unpacked, "cookAmount": cookAmount}
+    return {"ings": unpacked, "cookAmount": cookAmount};
 }
 
 Object.filter = (obj, predicate) => 
                   Object.fromEntries(Object.entries(obj).filter(predicate));
 
 function normalAndExoticIngsSeparated(unpackedDish) {
-    let normal = Object.filter(unpackedDish, (ing) => !exoticIngredients.includes(ing[0]))
-    let exotic = Object.filter(unpackedDish, (ing) => exoticIngredients.includes(ing[0]))
-    return {"normal": normal, "exotic": exotic}
+    let normal = Object.filter(unpackedDish, (ing) => !exoticIngredients.includes(ing[0]));
+    let exotic = Object.filter(unpackedDish, (ing) => exoticIngredients.includes(ing[0]));
+    return {"normal": normal, "exotic": exotic};
 }
 
 function dishBaseValue(dishName) {
-    unpacked = unpackDish(dishName)
-    const ingsSeparated = normalAndExoticIngsSeparated(unpacked["ings"])
+    unpacked = unpackDish(dishName);
+    const ingsSeparated = normalAndExoticIngsSeparated(unpacked["ings"]);
     function sumValues(obj) {
-        let sum = 0
-        Object.entries(obj).forEach((entry) => sum += entry[1])
-        return sum
+        let sum = 0;
+        Object.entries(obj).forEach((entry) => sum += entry[1]);
+        return sum;
     }
-    const normalIngsAmnt = sumValues(ingsSeparated["normal"])
-    const exoticIngsAmnt = sumValues(ingsSeparated["exotic"])
+    const normalIngsAmnt = sumValues(ingsSeparated["normal"]);
+    const exoticIngsAmnt = sumValues(ingsSeparated["exotic"]);
     baseValue = priceBonuses["normalIng"] * normalIngsAmnt +
                 priceBonuses["exoticIng"] * exoticIngsAmnt +
-                priceBonuses["cook"] * unpacked["cookAmount"]
-    return baseValue
+                priceBonuses["cook"] * unpacked["cookAmount"];
+    return baseValue;
 }
 
 function dishPrice(dishName, dishLevel=2) {
-    baseValue = dishBaseValue(dishName)
-    return baseValue + Math.round(baseValue * (dishLevel - 1) * priceBonuses["quality"])
+    baseValue = dishBaseValue(dishName);
+    return baseValue + Math.round(baseValue * (dishLevel - 1) * priceBonuses["quality"]);
 }
 
 function sendForm(e) {
     // extract items from input
     const userInput = document.getElementById("user-items-input").value;
-    const userItems = parseToItemsJson(userInput);
+    const {userItems, erroredLines} = parseToItemsJson(userInput);
 
     // collect awailable recipes
     let awailableRecipes = {};
@@ -1046,12 +1060,12 @@ function sendForm(e) {
             break;
         case 'baseval':
             awailableRecipesArray.sort((a, b) => {
-                return dishBaseValue(b[0]) - dishBaseValue(a[0])
+                return dishBaseValue(b[0]) - dishBaseValue(a[0]);
             });
             break;
         case 'price':
             awailableRecipesArray.sort((a, b) => {
-                return dishPrice(b[0]) - dishPrice(a[0])
+                return dishPrice(b[0]) - dishPrice(a[0]);
             });
             break;
         default:
@@ -1072,11 +1086,11 @@ function sendForm(e) {
         "Exotic": "assets/rarity-emojis/exotic_recipe.webp",
         "Secret": "assets/rarity-emojis/secret_recipe.webp",
         "Unknown": "assets/rarity-emojis/unknown_recipe.webp"
-    }
+    };
     let response = "";
     for (var recipeName in awailableRecipesSorted) {
         const recipe = awailableRecipes[recipeName];
-        rarityEmoji = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`
+        rarityEmoji = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`;
         line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]} 💵${dishBaseValue(recipeName)}):\n` +
                `   ${itemsObjectToString(recipe["ingredients"])}\n`;
         response += line;
@@ -1084,6 +1098,12 @@ function sendForm(e) {
     if (!response) {
         response = "Seems like you can't cook anything out of these ingredients";
         if (hideSecretRecipesCheckbox.checked) response += " (secret recipes might've been hidden)";
+    }
+    if (Object.keys(erroredLines).length != 0) {
+        response += "\n\nWarnings:\n";
+        for (let prop of Object.keys(erroredLines)) {
+            response += `Couldn't extract ${erroredLines[prop]} from line ${parseInt(prop) + 1}\n`;
+        }
     }
     const outputBox = document.getElementById("output-textarea");
     outputBox.innerHTML = response;
