@@ -350,6 +350,13 @@
         },
         "rarity": "Tier 3"
     },
+    "Dirt": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Water": 2
+        },
+        "rarity": "Secret"
+    },
     "Donut": {
         "ingredients": {
             "Dough": 1,
@@ -417,7 +424,7 @@
         },
         "rarity": "Tier 3"
     },
-    "Fried Meat": {
+    "Fried Chicken": {
         "ingredients": {
             "Egg": 1,
             "Flour": 1,

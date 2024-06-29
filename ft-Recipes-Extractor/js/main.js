@@ -3,7 +3,7 @@
     (lists of all basic and exotic ingredients, recipes, ingredients sorted by usage frequency...; 
     formulas for price evaluation)
 - Centralise layout (how tf)
-- Add warnings if a string could not be parsed
+- Add warnings if a string could not be parsed (dish name not in the recipes list)
 */
 
 const recipesJson = {
@@ -358,6 +358,13 @@ const recipesJson = {
         },
         "rarity": "Tier 3"
     },
+    "Dirt": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Water": 2
+        },
+        "rarity": "Secret"
+    },
     "Donut": {
         "ingredients": {
             "Dough": 1,
@@ -425,7 +432,7 @@ const recipesJson = {
         },
         "rarity": "Tier 3"
     },
-    "Fried Meat": {
+    "Fried Chicken": {
         "ingredients": {
             "Egg": 1,
             "Flour": 1,
