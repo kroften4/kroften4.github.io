@@ -440,6 +440,12 @@ const recipesJson = {
         },
         "rarity": "Tier 1"
     },
+    "Fried Chicken Bucket": {
+        "ingredients": {
+            "Fried Chicken": 3
+        },
+        "rarity": "Tier 2"
+    },
     "Fried Shrimp": {
         "ingredients": {
             "Egg": 1,
