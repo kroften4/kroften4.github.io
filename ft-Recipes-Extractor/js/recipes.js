@@ -308,7 +308,7 @@ export const recipes = {
     },
     "Copypasta": {
         "ingredients": {
-            "Pasta with Sauce": 2
+            "Spaghetti": 2
         },
         "rarity": "Secret"
     },
@@ -679,7 +679,7 @@ export const recipes = {
     "Pasta and Meatballs": {
         "ingredients": {
             "Meat": 1,
-            "Pasta with Sauce": 1
+            "Spaghetti": 1
         },
         "rarity": "Tier 3"
     },

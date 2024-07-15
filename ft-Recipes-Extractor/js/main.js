@@ -113,7 +113,6 @@ function parseToItemsJson(message) {
                 throw e;
             }
         }
-        
     }
     return {userItems: userItems, erroredLines: erroredLines};
 }
