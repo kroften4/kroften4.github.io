@@ -104,10 +104,9 @@ textarea::-webkit-scrollbar-thumb:hover, .fake-textarea::-webkit-scrollbar-thumb
 }
 #everything {
 	width: 80vw;
-	/* display: flex; */
-	/* align-items: center; */
 	max-width: fit-content;
 	margin-inline: auto;
+	min-width: min-content;
 }
 body {
 	display: flex;
