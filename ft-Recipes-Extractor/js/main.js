@@ -51,7 +51,8 @@ const exoticIngredients = [
     "Beans",
     "Tea Leaves",
     "Ginger",
-    "Avocado"
+    "Avocado",
+    "Grapes"
 ];
 
 const foods = basicIngredients.concat(exoticIngredients).concat(honeyIngredients)

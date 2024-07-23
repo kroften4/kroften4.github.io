@@ -79,6 +79,14 @@ export const recipes = {
         },
         "rarity": "Tier 1"
     },
+    "Beer": {
+        "ingredients": {
+            "Flour": 1,
+            "Mushroom": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
     "Blue Ice": {
         "ingredients": {
             "Packed Ice": 2
@@ -112,6 +120,12 @@ export const recipes = {
             "Water": 1
         },
         "rarity": "Basic"
+    },
+    "Bucket of Fried Chicken": {
+        "ingredients": {
+            "Fried Chicken": 3
+        },
+        "rarity": "Tier 2"
     },
     "Burger": {
         "ingredients": {
@@ -157,6 +171,13 @@ export const recipes = {
         "ingredients": {
             "Apple": 1,
             "Caramel": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Champagne": {
+        "ingredients": {
+            "Sugar": 1,
+            "Wine": 1
         },
         "rarity": "Exotic"
     },
@@ -432,12 +453,6 @@ export const recipes = {
         },
         "rarity": "Tier 1"
     },
-    "Fried Chicken Bucket": {
-        "ingredients": {
-            "Fried Chicken": 3
-        },
-        "rarity": "Tier 2"
-    },
     "Fried Shrimp": {
         "ingredients": {
             "Egg": 1,
@@ -459,6 +474,14 @@ export const recipes = {
             "Dough": 1,
             "Ginger": 1,
             "Icing": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Guacamole": {
+        "ingredients": {
+            "Avocado": 1,
+            "Onion": 1,
+            "Potato": 1
         },
         "rarity": "Exotic"
     },
@@ -586,6 +609,10 @@ export const recipes = {
         },
         "rarity": "Tier 2"
     },
+    "Minecraft Steve": {
+        "ingredients": {},
+        "rarity": "Secret"
+    },
     "Mocha": {
         "ingredients": {
             "Chocolate": 1,
@@ -593,6 +620,12 @@ export const recipes = {
             "Milk": 1
         },
         "rarity": "Exotic"
+    },
+    "Mochi Donut": {
+        "ingredients": {
+            "Dough": 2
+        },
+        "rarity": "Tier 1"
     },
     "Mushroom Pizza": {
         "ingredients": {
@@ -762,6 +795,22 @@ export const recipes = {
         },
         "rarity": "Tier 1"
     },
+    "Rum": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Sugar": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Sake": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Rice": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
     "Salad": {
         "ingredients": {
             "Lettuce": 1,
@@ -887,5 +936,29 @@ export const recipes = {
             "Sugar": 1
         },
         "rarity": "Tier 1"
+    },
+    "Vodka": {
+        "ingredients": {
+            "Mushroom": 1,
+            "Potato": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Whiskey": {
+        "ingredients": {
+            "Corn": 1,
+            "Mushroom": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
+    },
+    "Wine": {
+        "ingredients": {
+            "Grapes": 1,
+            "Mushroom": 1,
+            "Water": 1
+        },
+        "rarity": "Exotic"
     }
 }

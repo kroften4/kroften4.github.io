@@ -8,75 +8,79 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="main">
-        <h1>Food Truck recipes extractor</h1>
-        <form id="extract-recipes-form">
-            <textarea required id="user-items-input" placeholder="Paste in your ingredients and dishes here"></textarea>
-            <div id="output-manager">
-                <div id="options">
-                    <label for="recipes-sort-select">Sort by:</label>
-                    <select id="recipes-sort-select">
-                        <option value="rarity">Rarity</option>
-                        <option value="name">Name</option>
-                        <option value="baseval">Base value</option>
-                    </select>
-                    <input id="hide-secret-recipes-checkbox" type="checkbox" value="checked">
-                    <label for="hide-secret-recipes-checkbox">Hide secret recipes</label>
-                </div>
-                <button type="button" id="send-form-btn">Extract</button>
-            </div>
-        </form>
-        <div class="fake-textarea" id="output-textarea" placeholder="Result goes here, Try pushing Extract."></div>
-        <p id="last-update">
-            Last <a href="https://kroften4.github.io/ft-Recipes-Extractor/assets/recipes.json">recipes json</a> update: 06.07.2024 23:00 UTC
-            <br>
-            Completion: 16/16 Basic, 32/32 Tier I, 31/32 Tier II, 12/12 Tier III, 23/23 Exotic, 9/?? Secret
-        </p>
-    </div>
-    <p><div id="about"><br>
-        <h1>About</h1>
-        <p>Food Truck recipes extractor - a web tool created for the Food Truck discord bot made by man_o_valor, which helps you find out what you can cook based on your available ingredients and dishes</p>
-        <p><a href="https://discord.gg/5FcDdcEU2R">Food Truck discord server</a></p>
-        <h2>Usage</h2>
-        <ul>
-            <li><p>Each line must contain one food</p></li>
-            <li><p>It must be one of 3 formats: <b>Ingredient</b>, <b>Dish</b> or <b>Custom</b></p></li>
-            <li><p><b>Ingredient</b> and <b>Dish</b> formats are default Food Truck representation of foods used in <code>/dishes</code> and  <code>/ingredients</code></p></li>
-            <li>
-                <p><b>Custom</b> formatted line is a food name followed by amount, it should look like this:</p>
-                <p><code>Tasty Food 14</code></p>
-            </li>
-            <li>
-                <b>Tip 1:</b> you can copy all your ingredients from /ingredients, paste it in the input field, then copy your dishes from /dishes, and paste them too starting from a new line. Your input field could look like this:<br>
-                <p>
-                    <code>
-                        <span>🍅 Tomato ×2</span><br>
-                        <span>🍎 Apple ×5 (Exotic) (ID: 76)</span><br>
-                        <span>💛 :oliveoil: Olive Oil [90 💵 ]</span><br>
-                        <span>🩶 :tortilla: Tortilla [40 💵 ]</span><br>
-                        <span>Dough 3</span><br>
-                    </code>
-                </p>
-            </li>
-            <li><b>Tip 2:</b> at the end of the output field you will see warnings if some of the lines were not correctly parsed</li>
-        </ul>
-        <h2>How it works</h2>
-        <p><b>Food formats:</b> regex</p>
-        <p>
-            <b>Base value formula:</b> <code>basic_ing_amount * 40 + exotic_ing_amount * 200 + cooking_amount * 10</code>
-            <br>
-            Here's a formula for quality bonus, btw: <code>base_value * 0.15 * (quality_level - 1)</code>
-        </p>
-        <p><b>Recipes json:</b> I have a Google Sheet which I update first, then by using python I convert it into a formatted json, copy it and paste into the code (that's really awkward)</p>
-        <h2>Contacts</h2>
-        <p>My discord: <a href="https://discord.com/users/694215003347091564">krftn</a></p>
-        <div id="credits">
-            <h2>Credits</h2>
-            <p><a href="https://discord.com/users/1013096732147597412">man_o_valor</a> - creator of the <a href="https://discord.com/application-directory/1189308444109451295">Food Truck</a>, also used his emojis from the <a href="https://discord.gg/HXBXM6bzuh">server</a></p>
-            <p><a href="https://vgcoder.w3spaces.com/" target="_blank">vg_coder</a> - css and general help</p>
-            <p>Penguin Squire - provided some of the recipes</p>
+    <div id="everything">
+        <div id="main">
+            <h1>Food Truck recipes extractor</h1>
+            <!-- <div id="textareas"> -->
+                <form id="extract-recipes-form">
+                    <textarea required id="user-items-input" placeholder="Paste in your ingredients and dishes here"></textarea>
+                    <div id="output-manager">
+                        <div id="options">
+                            <label for="recipes-sort-select">Sort by:</label>
+                            <select id="recipes-sort-select">
+                                <option value="rarity">Rarity</option>
+                                <option value="name">Name</option>
+                                <option value="baseval">Base value</option>
+                            </select>
+                            <input id="hide-secret-recipes-checkbox" type="checkbox" value="checked">
+                            <label for="hide-secret-recipes-checkbox">Hide secret recipes</label>
+                        </div>
+                        <button type="button" id="send-form-btn">Extract</button>
+                    </div>
+                </form>
+                <div class="fake-textarea" id="output-textarea" placeholder="Result goes here, Try pushing Extract."></div>
+            <!-- </div> -->
+            <p id="last-update">
+                Last <a href="https://kroften4.github.io/ft-Recipes-Extractor/assets/recipes.json">recipes json</a> update: 06.07.2024 23:00 UTC
+                <br>
+                Completion: 16/16 Basic, 33/33 Tier I, 32/32 Tier II, 12/12 Tier III, 31/31 Exotic, 9/?? Secret
+            </p>
         </div>
-    </div></p>
+        <p><div id="about"><br>
+            <h1>About</h1>
+            <p>Food Truck recipes extractor - a web tool created for the Food Truck discord bot made by man_o_valor, which helps you find out what you can cook based on your available ingredients and dishes</p>
+            <p><a href="https://discord.gg/5FcDdcEU2R">Food Truck discord server</a></p>
+            <h2>Usage</h2>
+            <ul>
+                <li><p>Each line must contain one food</p></li>
+                <li><p>It must be one of 3 formats: <b>Ingredient</b>, <b>Dish</b> or <b>Custom</b></p></li>
+                <li><p><b>Ingredient</b> and <b>Dish</b> formats are default Food Truck representation of foods used in <code>/dishes</code> and  <code>/ingredients</code></p></li>
+                <li>
+                    <p><b>Custom</b> formatted line is a food name followed by amount, it should look like this:</p>
+                    <p><code>Tasty Food 14</code></p>
+                </li>
+                <li>
+                    <b>Tip 1:</b> you can copy all your ingredients from /ingredients, paste it in the input field, then copy your dishes from /dishes, and paste them too starting from a new line. Your input field could look like this:<br>
+                    <p>
+                        <code>
+                            <span>🍅 Tomato ×2</span><br>
+                            <span>🍎 Apple ×5 (Exotic) (ID: 76)</span><br>
+                            <span>💛 :oliveoil: Olive Oil [90 💵 ]</span><br>
+                            <span>🩶 :tortilla: Tortilla [40 💵 ]</span><br>
+                            <span>Dough 3</span><br>
+                        </code>
+                    </p>
+                </li>
+                <li><b>Tip 2:</b> at the end of the output field you will see warnings if some of the lines were not correctly parsed</li>
+            </ul>
+            <h2>How it works</h2>
+            <p><b>Food formats:</b> regex</p>
+            <p>
+                <b>Base value formula:</b> <code>basic_ing_amount * 40 + exotic_ing_amount * 200 + cooking_amount * 10</code>
+                <br>
+                Here's a formula for quality bonus, btw: <code>base_value * 0.15 * (quality_level - 1)</code>
+            </p>
+            <p><b>Recipes json:</b> I have a Google Sheet which I update first, then by using python I convert it into a formatted json, copy it and paste into the code (that's really awkward)</p>
+            <h2>Contacts</h2>
+            <p>My discord: <a href="https://discord.com/users/694215003347091564">krftn</a></p>
+            <div id="credits">
+                <h2>Credits</h2>
+                <p><a href="https://discord.com/users/1013096732147597412">man_o_valor</a> - creator of the <a href="https://discord.com/application-directory/1189308444109451295">Food Truck</a>, also used his emojis from the <a href="https://discord.gg/HXBXM6bzuh">server</a></p>
+                <p><a href="https://vgcoder.w3spaces.com/" target="_blank">vg_coder</a> - css and general help</p>
+                <p>Penguin Squire - provided some of the recipes</p>
+            </div>
+        </div></p>
+    </div>
     <!-- <span style="background-color:#444455; padding-inline: 3px; border-radius: 4px;">spoiler</span> -->
     <script type="module" src="js/main.js"></script>
 </body>

@@ -42,7 +42,7 @@ code {
 }
 #about {
 	clear: both;
-	max-width: 1000px;
+	max-width: 660px;
 }
 #last-update {
 	clear: both;
@@ -96,4 +96,20 @@ textarea::-webkit-scrollbar-thumb:hover, .fake-textarea::-webkit-scrollbar-thumb
 }
 #output-manager label {
 	font-size: 15px;
+}
+#main {
+	width: fit-content;
+	/* max-width: fit-content; */
+	margin-inline: auto;
+}
+#everything {
+	width: 80vw;
+	/* display: flex; */
+	/* align-items: center; */
+	max-width: fit-content;
+	margin-inline: auto;
+}
+body {
+	display: flex;
+	align-items: center;
 }
