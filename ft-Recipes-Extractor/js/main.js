@@ -70,8 +70,8 @@ class ItemParseError extends Error {};
 function parseToItem(line) {
     let itemName, amount;
     line = line.replace(/\*/g, "");
-    let ingredient = /^(?:. |:.+?: )(.+) ×(\d+)(?: \((?:Exotic|Honey)\))?(?: \(ID: \d+\))?$/u;
-    let dish = /^(?:. |:.+?: ){2}(.+)(?: \[\d+ (?::dollar:|💵) \])(?: \(ID: \d+\))?$/u;
+    let ingredient = /^(?:. |:.+?: |<:.+?:\d+?> )(.+) ×(\d+)(?: \((?:Exotic|Honey)\))?(?: \(ID: \d+\))?$/u;
+    let dish = /^(?:. |:.+?: |<:.+?:\d+?> ){2}(.+)(?: \[\d+ (?::dollar:|💵) \])(?: \(ID: \d+\))?$/u;
     let custom = /^(.+) (\d+)$/u;
     if (ingredient.test(line)) {
         let result = ingredient.exec(line);
