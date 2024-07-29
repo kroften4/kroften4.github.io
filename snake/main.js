@@ -254,6 +254,11 @@ function runGame() {
             state = state.update(recentArrowKeys);
             drawState(state);
             if (state.status == "won" || state.status == "lost") {
+                cx.textAlign = "center";
+                cx.fillStyle = "black";
+                cx.font = `bold 14px Arial`;
+                cx.fillText("Your score: " + state.snake.tail.length,
+                     fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
                 clearInterval(interval);
             }
         })        
