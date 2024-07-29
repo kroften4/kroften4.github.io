@@ -2,8 +2,7 @@
 - Add new page or smth which will contain some useful info 
     (lists of all basic and exotic ingredients, recipes, ingredients sorted by usage frequency...; 
     formulas for price evaluation)
-- Centralise layout (how tf)
-- read file "recipes.json" in recipes.js module, maybe screw the module and read it here
+- read file "recipes.json"
 */
 
 import {recipes as recipesJson} from "./recipes.js";
