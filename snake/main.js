@@ -23,17 +23,18 @@ class State {
     
     update(keys) {
         let newSnake = this.snake.update(keys);
-        let newApple = this.apple.apple;  
-        if (this.apple.isEaten(newSnake)) {
+        let newApple = this.apple.apple;
+        if (this.apple.exists && this.apple.isEaten(newSnake)) {
             newSnake = newSnake.extend();
             newApple = Apple.spawn(newSnake.tail);
         }
         let status = Snake.checkState(newSnake.tail);
+        if (this.status == "winning")
+            status = "won";
         if (status == "lost" || this.status == "won") {
             this.status = status;
             return this;
         }
-                  
         return new State(newSnake, newApple, status);
     }
 
@@ -77,7 +78,7 @@ class Snake {
 
     static checkState(tail) {
         if (tail.length === fieldSize.x * fieldSize.y)
-            return "won";
+            return "winning";
         for (let partPos of tail.slice(1)) {
             if (tail[0].equals(partPos))
                 return "lost";
@@ -124,8 +125,9 @@ class Snake {
 }
 
 class Apple {
-    constructor(pos) {
+    constructor(pos, exists) {
         this.pos = pos;
+        this.exists = exists;
     }
 
     static spawn(tail) {
@@ -137,8 +139,11 @@ class Apple {
                     spawningSpace.push(tile);
             }
         }
-        let randomTileIndex = Math.floor(Math.random() * spawningSpace.length);
-        return new Apple(spawningSpace[randomTileIndex]);
+        if (spawningSpace.length != 0) {
+            let randomTileIndex = Math.floor(Math.random() * spawningSpace.length);
+            return new Apple(spawningSpace[randomTileIndex], true);
+        }
+        return new Apple(null, false);
     }
 
     isEaten(snake) {
@@ -148,7 +153,7 @@ class Apple {
     }
 
     get apple() {
-        return new Apple(this.pos);
+        return new Apple(this.pos, true);
     }
 }
 
@@ -198,11 +203,12 @@ function drawApple(apple) {
 }
 
 function drawState(state) {
-    if (state.status == "playing") {
+    if (state.status == "playing" || state.status == "winning") {
         let snake = state.snake;
         let apple = state.apple;
         drawField();
-        drawApple(apple);
+        if (apple.exists)
+            drawApple(apple);
         drawSnake(snake);
         return;
     }
@@ -215,13 +221,13 @@ function drawState(state) {
         cx.fillStyle = "SteelBlue";
     }
     cx.textAlign = "center";
-    
-    cx.font = "normal 48px Arial";
+    cx.textBaseline = "middle"
+    cx.font = `normal ${scale * 1.5}px Arial`;
     cx.fillText(message, fieldSize.x * scale / 2, fieldSize.y * scale / 2);
 }
 
 const recentArrowKeys = trackRecentKeys(["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]);
-let fieldSize = new Vec(25, 25);
+let fieldSize = new Vec(10, 10);
 let canvas = document.querySelector("canvas")
 let cx = canvas.getContext("2d");
 let scale = 20;
@@ -232,8 +238,7 @@ let interval = setInterval(() => {
     requestAnimationFrame((timestamp) => {
         state = state.update(recentArrowKeys);
         drawState(state);
-        if (state.status != "playing") {
-            console.log(state.status);
+        if (state.status == "won" || state.status == "lost") {
             clearInterval(interval);
         }
     })        
