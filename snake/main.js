@@ -70,8 +70,8 @@ class Snake {
         let newTail = this.tail.slice();
         let prevEndPos = newTail.pop();
         let newPos = newTail[0].plus(this.#directions[key])
-        newPos.x = (fieldSize.x + newPos.x) % fieldSize.x;
-        newPos.y = (fieldSize.y + newPos.y) % fieldSize.y;
+        // newPos.x = (fieldSize.x + newPos.x) % fieldSize.x;
+        // newPos.y = (fieldSize.y + newPos.y) % fieldSize.y;
         newTail.unshift(newPos);
         return new Snake(newTail, key, prevEndPos);
     }
@@ -79,6 +79,10 @@ class Snake {
     static checkState(tail) {
         if (tail.length === fieldSize.x * fieldSize.y)
             return "winning";
+        let headPos = tail[0];
+        if (headPos.x < 0 || headPos.x >= fieldSize.x || 
+            headPos.y < 0 || headPos.y >= fieldSize.y)
+            return "lost";
         for (let partPos of tail.slice(1)) {
             if (tail[0].equals(partPos))
                 return "lost";
@@ -227,19 +231,32 @@ function drawState(state) {
 }
 
 const recentArrowKeys = trackRecentKeys(["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]);
-let fieldSize = new Vec(10, 10);
+let fieldSize = new Vec(15, 15);
 let canvas = document.querySelector("canvas")
 let cx = canvas.getContext("2d");
 let scale = 20;
 let state = State.create();
+drawState(state);
+cx.textAlign = "center";
+cx.fillStyle = "black";
+cx.font = `bold 14px Arial`;
+cx.fillText("Press any key to start", fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
+window.addEventListener("keydown", function startGame(event) {
+    this.window.removeEventListener("keydown", startGame);
+    runGame();
+    event.preventDefault();
+});
 
-let interval = setInterval(() => {
-    let ended = false;
-    requestAnimationFrame((timestamp) => {
-        state = state.update(recentArrowKeys);
-        drawState(state);
-        if (state.status == "won" || state.status == "lost") {
-            clearInterval(interval);
-        }
-    })        
-}, 150)
+function runGame() {
+    let interval = setInterval(() => {
+        let ended = false;
+        requestAnimationFrame((timestamp) => {
+            state = state.update(recentArrowKeys);
+            drawState(state);
+            if (state.status == "won" || state.status == "lost") {
+                clearInterval(interval);
+            }
+        })        
+    }, 150)
+}
+
