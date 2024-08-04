@@ -527,7 +527,7 @@ export const recipes = {
         },
         "rarity": "Exotic"
     },
-    "Le Fishe au Chocolat": {
+    "Le Fishe Au Chocolat": {
         "ingredients": {
             "Chocolate": 1,
             "Fish": 1
@@ -648,7 +648,7 @@ export const recipes = {
         },
         "rarity": "Tier 1"
     },
-    "NothingBurger": {
+    "Nothingburger": {
         "ingredients": {
             "Bread": 2
         },
