@@ -150,7 +150,6 @@ changeSizeBtn.addEventListener("click", initialize);
 
 let intervalInput = document.querySelector("#interval");
 intervalInput.addEventListener("change", () => {
-    console.log(intervalInput.value, interval);
     interval = intervalInput.value;
     if (isPlaying) {
         stopAnimation();
