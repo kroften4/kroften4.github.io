@@ -8,13 +8,26 @@
 </head>
 
 <body>
+    
     <h1>Conway's Game Of Life</h1>
     <div id="grid"></div>
-    <button id="start">▶</button>
-    <button id="stop">Pause</button>
-    <button id="next">Step</button>
-    <button id="reset">Reset</button>
-    <button id="randomize">Randomize</button>
+    <p>
+        <button class="playback-btn" id="start"><img class="playback-img"src="./assets/PlayBtn.png"></button>
+        <button class="playback-btn" id="stop"><img class="playback-img"src="./assets/PauseBtn.png"></button>
+        <button class="playback-btn" id="next"><img class="playback-img"src="./assets/StepBtn.png"></button>
+    </p>
+    <p>
+        Interval: <input id="interval" type="number" min="0.05" max="1" step="0.05" value="0.2"> s
+    </p>
+    <p>
+        Grid: <button id="reset">Clear</button>
+        <button id="randomize">Randomize</button>
+    </p>
+    <p>
+        Size: <input id="width" type="number" min="1" max="100" value="50"> x
+        <input id="height" type="number" min="1" max="100" value="50">
+        <button id="change-size">Redraw</button>
+    </p>
     <h4>Credits</h4>
     <p>
         This is an exersize from <a href="https://eloquentjavascript.net">Eloquent Javascript</a> by Marijn

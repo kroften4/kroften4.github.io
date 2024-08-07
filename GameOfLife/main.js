@@ -68,19 +68,39 @@ function updateGrid(state) {
     }
 }
 
-let grid = document.querySelector("#grid");
-let width = 25, height = 25;
-for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-        let cell = document.createElement("input");
-        cell.type = "checkbox";
-        cell["data-x"] = x;
-        cell["data-y"] = y;
-        cell.checked = Boolean(Math.floor(Math.random() * 2));
-        grid.appendChild(cell);
+function generateGrid(grid, width, height) {
+    grid.innerHTML = "";
+    for (let y = 0; y < height; y++) {
+        let row = document.createElement("tr");
+        for (let x = 0; x < width; x++) {
+            let cell = document.createElement("input");
+            cell.type = "checkbox";
+            cell["data-x"] = x;
+            cell["data-y"] = y;
+            cell.checked = Boolean(Math.floor(Math.random() * 2));
+            let tableCell = document.createElement("td");
+            row.appendChild(tableCell).appendChild(cell);
+        }
+        grid.appendChild(row)
     }
-    grid.appendChild(document.createElement("br"));
 }
+
+function initialize() {
+    width = document.querySelector("#width").value;
+    height = document.querySelector("#height").value;
+    generateGrid(grid, width, height);
+
+    state = [];
+    for (let i = 0; i < height; i++) {
+        state.push([]);
+    }
+    state = updatedState(state);
+}
+
+let grid = document.querySelector("#grid");
+let interval = document.querySelector("#interval").value;
+let width, height, state;
+initialize();
 
 function nextStep() {
     state = updatedState(state);
@@ -88,16 +108,8 @@ function nextStep() {
     updateGrid(state);
 }
 
-let state = [];
-for (let i = 0; i < height; i++) {
-    state.push([]);
-}
-state = updatedState(state);
-
 let nextGenBtn = document.querySelector("#next");
-nextGenBtn.addEventListener("click", () => {
-    nextStep();
-});
+nextGenBtn.addEventListener("click", nextStep);
 let resetBtn = document.querySelector("#reset");
 resetBtn.addEventListener("click", () => {
     state = reset(state);
@@ -108,20 +120,40 @@ randomizeBtn.addEventListener("click", () => {
     state = randomize(state);
     updateGrid(state);
 });
-let animationInterval;
-let isPlaying = false;
-let startAnimationBtn = document.querySelector("#start");
-startAnimationBtn.addEventListener("click", () => {
+
+function playAnimation() {
     if (!isPlaying) {
         isPlaying = true;
         nextStep();
         animationInterval = setInterval(() => {
             nextStep();
-        }, 250);
+        }, interval * 1000);
     }
-});
-let stopAnimationBtn = document.querySelector("#stop");
-stopAnimationBtn.addEventListener("click", () => {
+}
+
+function stopAnimation() {
     clearInterval(animationInterval);
     isPlaying = false;
+}
+
+let animationInterval;
+let isPlaying = false;
+let startAnimationBtn = document.querySelector("#start");
+
+startAnimationBtn.addEventListener("click", playAnimation);
+
+let stopAnimationBtn = document.querySelector("#stop");
+stopAnimationBtn.addEventListener("click", stopAnimation);
+
+let changeSizeBtn = document.querySelector("#change-size");
+changeSizeBtn.addEventListener("click", initialize);
+
+let intervalInput = document.querySelector("#interval");
+intervalInput.addEventListener("change", () => {
+    console.log(intervalInput.value, interval);
+    interval = intervalInput.value;
+    if (isPlaying) {
+        stopAnimation();
+        playAnimation();
+    }
 });
