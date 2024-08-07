@@ -5,7 +5,7 @@
 - read file "recipes.json"
 */
 
-import {recipes as recipesJson} from "./recipes.js";
+import { recipes as recipesJson } from "./recipes.js";
 
 const recipesLevelsInOrder = [
     "Secret",
@@ -55,7 +55,7 @@ const exoticIngredients = [
 ];
 
 const foods = basicIngredients.concat(exoticIngredients).concat(honeyIngredients)
-              .concat(Object.keys(recipesJson))
+    .concat(Object.keys(recipesJson))
 
 const priceBonuses = {
     "cook": 10,
@@ -64,7 +64,7 @@ const priceBonuses = {
     "quality": 0.15
 };
 
-class ItemParseError extends Error {};
+class ItemParseError extends Error { };
 
 function parseToItem(line) {
     let itemName, amount;
@@ -89,10 +89,10 @@ function parseToItem(line) {
     }
     if (!(foods.includes(itemName)))
         throw new InvalidFoodError("Invalid Food: " + itemName)
-    return {itemName: itemName, amount: amount};
+    return { itemName: itemName, amount: amount };
 }
 
-class InvalidFoodError extends Error {};
+class InvalidFoodError extends Error { };
 
 function parseToItemsJson(message) {
     let userItems = {};
@@ -103,7 +103,7 @@ function parseToItemsJson(message) {
         const line = message[i];
         try {
             item = parseToItem(line);
-            if (!(item.itemName in userItems)) 
+            if (!(item.itemName in userItems))
                 userItems[item.itemName] = 0;
             userItems[item.itemName] += item.amount;
         } catch (e) {
@@ -114,7 +114,7 @@ function parseToItemsJson(message) {
             }
         }
     }
-    return {userItems: userItems, erroredLines: erroredLines};
+    return { userItems: userItems, erroredLines: erroredLines };
 }
 
 function itemsObjectToString(itemsObject) {
@@ -142,16 +142,16 @@ function unpackDish(dishName, cookAmount = 0) {
             unpacked[ing] += recipesJson[dishName]["ingredients"][ing];
         }
     }
-    return {"ings": unpacked, "cookAmount": cookAmount};
+    return { "ings": unpacked, "cookAmount": cookAmount };
 }
 
-Object.filter = (obj, predicate) => 
-                  Object.fromEntries(Object.entries(obj).filter(predicate));
+Object.filter = (obj, predicate) =>
+    Object.fromEntries(Object.entries(obj).filter(predicate));
 
 function normalAndExoticIngsSeparated(unpackedDish) {
     let normal = Object.filter(unpackedDish, (ing) => !exoticIngredients.includes(ing[0]));
     let exotic = Object.filter(unpackedDish, (ing) => exoticIngredients.includes(ing[0]));
-    return {"normal": normal, "exotic": exotic};
+    return { "normal": normal, "exotic": exotic };
 }
 
 function dishBaseValue(dishName) {
@@ -165,12 +165,12 @@ function dishBaseValue(dishName) {
     const normalIngsAmnt = sumValues(ingsSeparated["normal"]);
     const exoticIngsAmnt = sumValues(ingsSeparated["exotic"]);
     let baseValue = priceBonuses["normalIng"] * normalIngsAmnt +
-                priceBonuses["exoticIng"] * exoticIngsAmnt +
-                priceBonuses["cook"] * unpacked["cookAmount"];
+        priceBonuses["exoticIng"] * exoticIngsAmnt +
+        priceBonuses["cook"] * unpacked["cookAmount"];
     return baseValue;
 }
 
-function dishPrice(dishName, dishLevel=2) {
+function dishPrice(dishName, dishLevel = 2) {
     baseValue = dishBaseValue(dishName);
     return baseValue + Math.round(baseValue * (dishLevel - 1) * priceBonuses["quality"]);
 }
@@ -180,7 +180,7 @@ function sendForm(e) {
 
     // extract items from input
     const userInput = document.getElementById("user-items-input").value;
-    const {userItems, erroredLines} = parseToItemsJson(userInput);
+    const { userItems, erroredLines } = parseToItemsJson(userInput);
 
     // collect awailable recipes
     let awailableRecipes = {};
@@ -261,7 +261,7 @@ function sendForm(e) {
         const recipe = awailableRecipes[recipeName];
         let rarityEmoji = `<img src="${rarityEmojisPaths[recipe["rarity"]]}" height="13"></img>`;
         let line = `• <b>${recipeName}</b> (${rarityEmoji}${recipe["rarity"]} 💵${dishBaseValue(recipeName)}):\n` +
-               `   ${itemsObjectToString(recipe["ingredients"])}\n`;
+            `   ${itemsObjectToString(recipe["ingredients"])}\n`;
         response += line;
     }
     if (!response) {

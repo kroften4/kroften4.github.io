@@ -20,7 +20,7 @@ class State {
         this.apple = apple;
         this.status = status;
     }
-    
+
     update(keys) {
         let newSnake = this.snake.update(keys);
         let newApple = this.apple.apple;
@@ -84,7 +84,7 @@ class Snake {
         if (tail.length === fieldSize.x * fieldSize.y)
             return "winning";
         let headPos = tail[0];
-        if (headPos.x < 0 || headPos.x >= fieldSize.x || 
+        if (headPos.x < 0 || headPos.x >= fieldSize.x ||
             headPos.y < 0 || headPos.y >= fieldSize.y)
             return "lost";
         for (let partPos of tail.slice(1)) {
@@ -221,12 +221,12 @@ function drawSnake(snake) {
     // hat
     const outerHeadSize = new Vec(scale * 0.8, scale * 0.8)
     cx.fillStyle = "rgb(102,69,0)";
-    cx.fillRect(headPos.x * scale + (scale * 1.8 - outerHeadSize.x) / 2, 
-                headPos.y * scale + (scale - outerHeadSize.x) / 2, outerHeadSize.x, outerHeadSize.y)
+    cx.fillRect(headPos.x * scale + (scale * 1.8 - outerHeadSize.x) / 2,
+        headPos.y * scale + (scale - outerHeadSize.x) / 2, outerHeadSize.x, outerHeadSize.y)
     const innerHeadSize = new Vec(scale * 0.5, scale * 0.5)
     cx.fillStyle = "rgb(130,93,14)";
-    cx.fillRect(headPos.x * scale + (scale * 1.8 - innerHeadSize.x) / 2, 
-                headPos.y * scale + (scale - innerHeadSize.x) / 2, innerHeadSize.x, innerHeadSize.y)
+    cx.fillRect(headPos.x * scale + (scale * 1.8 - innerHeadSize.x) / 2,
+        headPos.y * scale + (scale - innerHeadSize.x) / 2, innerHeadSize.x, innerHeadSize.y)
     cx.restore();
     // cx.fillRect(headCenter.x - 1.5, headCenter.y - 1.5, 3, 3); // cyclope
 }
@@ -296,16 +296,16 @@ const exoticApplesSrc = [
 
 function preloadImages(urls) {
     const promises = urls.map((url) => {
-      return new Promise((resolve, reject) => {
-        const image = new Image();
-  
-        image.src = url;
-  
-        image.onload = () => resolve(image);
-        image.onerror = () => reject(`Image failed to load: ${url}`);
-      });
+        return new Promise((resolve, reject) => {
+            const image = new Image();
+
+            image.src = url;
+
+            image.onload = () => resolve(image);
+            image.onerror = () => reject(`Image failed to load: ${url}`);
+        });
     });
-  
+
     return Promise.all(promises);
 }
 
@@ -352,10 +352,10 @@ function runGame() {
                 cx.fillStyle = "black";
                 cx.font = `bold 14px Arial`;
                 cx.fillText("Your score: " + state.snake.tail.length,
-                     fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
+                    fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
                 clearInterval(interval);
             }
-        })        
+        })
     }, 150)
 }
 

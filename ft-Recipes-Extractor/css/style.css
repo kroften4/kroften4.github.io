@@ -1,18 +1,21 @@
-/* ~ ~ CSS by VG_CODER https://vgcoder.w3spaces.com/ ~ ~ */ 
+/* ~ ~ CSS by VG_CODER https://vgcoder.w3spaces.com/ ~ ~ */
 /* Font and Background */
 body {
 	background-color: #222233;
 	font-family: Arial;
 	color: white;
 }
+
 textarea {
 	background-color: #333344;
 	color: white;
 }
+
 /* Better Layout */
 h1 {
-	margin: 0; 
+	margin: 0;
 }
+
 /* #send-form-btn {
 	position: absolute; 
 	transform: translate(-325px, 484px);
@@ -20,8 +23,9 @@ h1 {
 /* html body textarea, html body .fake-textarea {
 	float: left;
 } */
-#user-items-input, #output-textarea {
-	width: 320px; 
+#user-items-input,
+#output-textarea {
+	width: 320px;
 	height: 500px;
 	resize: none
 }
@@ -30,25 +34,30 @@ h1 {
 a {
 	color: aquamarine;
 }
+
 a:hover {
-	color:aqua;
+	color: aqua;
 }
+
 code {
-	display:inline-table;
+	display: inline-table;
 	background: #111122;
 	border-radius: 3px;
 	padding-inline: 3px;
 	padding-bottom: 1px;
 }
+
 #about {
 	clear: both;
 	max-width: 660px;
 }
+
 #last-update {
 	clear: both;
 	margin: 0;
 	padding-top: 5px;
 }
+
 .fake-textarea {
 	background-color: #333344;
 	color: white;
@@ -59,34 +68,47 @@ code {
 	overflow-y: scroll;
 	white-space: pre-wrap;
 }
+
 .fake-textarea:empty:not(:focus):before {
 	color: rgb(160, 160, 160);
 	content: attr(placeholder);
 }
+
 textarea::placeholder {
 	color: rgb(160, 160, 160);
 }
+
 /* textarea scrollbar */
-textarea::-webkit-scrollbar, .fake-textarea::-webkit-scrollbar {
+textarea::-webkit-scrollbar,
+.fake-textarea::-webkit-scrollbar {
 	width: 9px;
 }
-textarea::-webkit-scrollbar-track, .fake-textarea::-webkit-scrollbar-track{
+
+textarea::-webkit-scrollbar-track,
+.fake-textarea::-webkit-scrollbar-track {
 	background: #00000000;
 }
-textarea::-webkit-scrollbar-thumb, .fake-textarea::-webkit-scrollbar-thumb{
+
+textarea::-webkit-scrollbar-thumb,
+.fake-textarea::-webkit-scrollbar-thumb {
 	background: #888;
 }
-textarea::-webkit-scrollbar-thumb:hover, .fake-textarea::-webkit-scrollbar-thumb:hover{
-	background: #666; 
+
+textarea::-webkit-scrollbar-thumb:hover,
+.fake-textarea::-webkit-scrollbar-thumb:hover {
+	background: #666;
 }
+
 /* --- */
 #extract-recipes-form {
 	float: left;
 	/* margin-bottom: 2px; */
 }
+
 #send-form-btn {
 	padding-bottom: 0px;
 }
+
 #output-manager {
 	border-radius: 4px;
 	background-color: #111122;
@@ -94,20 +116,24 @@ textarea::-webkit-scrollbar-thumb:hover, .fake-textarea::-webkit-scrollbar-thumb
 	padding: 3px;
 	margin-bottom: 4px;
 }
+
 #output-manager label {
 	font-size: 15px;
 }
+
 #main {
 	width: fit-content;
 	/* max-width: fit-content; */
 	margin-inline: auto;
 }
+
 #everything {
 	width: 80vw;
 	max-width: fit-content;
 	margin-inline: auto;
 	min-width: min-content;
 }
+
 body {
 	display: flex;
 	align-items: center;
