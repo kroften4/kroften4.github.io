@@ -157,3 +157,168 @@ intervalInput.addEventListener("change", () => {
         playAnimation();
     }
 });
+
+const gliderPattern = 
+`..X
+X.X
+.XX`;
+
+const piHeptominoPattern = 
+`XXX
+X.X
+X.X`;
+
+const copperheadPattern = 
+`.XX..XX.
+...XX...
+...XX...
+X.X..X.X
+X......X
+........
+X......X
+.XX..XX.
+..XXXX..
+........
+...XX...
+...XX...`;
+
+const loneDotAgarPattern = 
+`......XX..XX......
+......X..X.X......
+.......X..........
+...XX.....X..XX...
+...X..X.X...X.X...
+....X.....X.......
+XX.....X.....X..XX
+X..X.X...X.X...X.X
+.X.....X.....X....
+....X.....X.....X.
+X.X...X.X...X.X..X
+XX..X.....X.....XX
+.......X.....X....
+...X.X...X.X..X...
+...XX..X.....XX...
+..........X.......
+......X.X..X......
+......XX..XX......`;
+
+const pufferfishPattern = 
+`...X.......X...
+..XXX.....XXX..
+.XX..X...X..XX.
+...XXX...XXX...
+...............
+....X.....X....
+..X..X...X..X..
+X.....X.X.....X
+XX....X.X....XX
+......X.X......
+...X.X...X.X...
+....X.....X....`;
+
+const gosperGliderGunPattern = 
+`........................X...........
+......................X.X...........
+............XX......XX............XX
+...........X...X....XX............XX
+XX........X.....X...XX..............
+XX........X...X.XX....X.X...........
+..........X.....X.......X...........
+...........X...X....................
+............XX......................`;
+
+const presets = {
+    "glider": {
+        pattern: gliderPattern, 
+        offset: {x: 1, y: 1},
+        gridSize: {x: 40, y: 40}
+    },
+    "piHeptomino": {
+        pattern: piHeptominoPattern, 
+        offset: {x: 23, y: 23},
+        gridSize: {x: 50, y: 50}
+    },
+    "copperhead": {
+        pattern: copperheadPattern, 
+        offset: {x: 4, y: 86},
+        gridSize: {x: 16, y: 100}
+    },
+    "loneDotAgar": {
+        pattern: loneDotAgarPattern, 
+        offset: {x: 3, y: 3},
+        gridSize: {x: 24, y: 24}
+    },
+    "pufferfish": {
+        pattern: pufferfishPattern, 
+        offset: {x: 3, y: 85},
+        gridSize: {x: 21, y: 100}
+    },
+    "gosperGliderGun": {
+        pattern: gosperGliderGunPattern, 
+        offset: {x: 1, y: 1},
+        gridSize: {x: 65, y: 50}
+    }
+}
+
+function extendPresets() {
+    for (let prop in presets) {
+        let preset = presets[prop];
+        preset.pattern = preset.pattern.split('\n')
+        preset.size = {
+            x: preset.pattern[0].length, 
+            y: preset.pattern.length
+        };
+        const emptyRow = '.'.repeat(preset.gridSize.x) + '\n';
+        let fullPattern = emptyRow.repeat(preset.offset.y);
+        for (let patternPart of preset.pattern) {
+            let leftPart = '.'.repeat(preset.offset.x);
+            let rightPart = '.'.repeat(preset.gridSize.x - preset.size.x - preset.offset.x) + '\n';
+            let row = leftPart + patternPart + rightPart;
+            fullPattern += row;
+        }
+        let rest = preset.gridSize.y - preset.offset.y - preset.size.y;
+        fullPattern += emptyRow.repeat(rest);
+        preset.fullPattern = fullPattern;
+    }
+}
+extendPresets();
+
+function generateGridFromState(state) {
+    grid.innerHTML = "";
+    for (let y = 0; y < height; y++) {
+        let row = document.createElement("tr");
+        for (let x = 0; x < width; x++) {
+            let cell = document.createElement("input");
+            cell.type = "checkbox";
+            cell["data-x"] = x;
+            cell["data-y"] = y;
+            cell.checked = state[y][x];
+            let tableCell = document.createElement("td");
+            row.appendChild(tableCell).appendChild(cell);
+        }
+        grid.appendChild(row)
+    }
+}
+
+function generateStateFromPreset(preset) {
+    let pattern = preset.fullPattern.split('\n').map(row => row.split(""));
+    let newState = [];
+    height = pattern.length;
+    width = pattern[0].length;
+    for (let y = 0; y < height; y++) {
+        newState[y] = [];
+        for (let x = 0; x < width; x++) {
+            newState[y][x] = pattern[y][x] == 'X' ? true : false;
+        }
+    }
+    return newState;
+}
+
+const presetsSelect = document.querySelector("#presets");
+const generatePresetBtn = document.querySelector("#preset-btn");
+generatePresetBtn.addEventListener("click", () => {
+    let selectedOption = presetsSelect.options[presetsSelect.selectedIndex];
+    let selectedPreset = presets[selectedOption.value];
+    state = generateStateFromPreset(selectedPreset);
+    generateGridFromState(state);
+})
