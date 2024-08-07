@@ -1,0 +1,15 @@
+input[type="checkbox"] {
+    accent-color: black;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4, h1 {
+    margin-block-end: 7px;
+}
+
+p {
+    margin-top: 0;
+}
