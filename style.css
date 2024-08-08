@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.preview {
+    max-height: 280px;
+    max-width: 100%;
+    min-width: 300px;
+}
+
+.page-desc {
+    max-width: 500px;
+}
+
+.page-icon {
+    width: 30px;
+    transform: translate(0, 8px);
+}
+
+.page-title {
+    display: inline;
+}
+
+.page-title h3 {
+    margin-block: 5px;
+}
+
+#navigation-heading {
+    margin-bottom: 0;
+}

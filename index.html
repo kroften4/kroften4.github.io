@@ -5,16 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kroften's website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Hi</h1>
-    <h3>Currently available pages</h3>
-    <ul>
-        <li><a href="/ft-Recipes-Extractor/">Food Truck recipes extractor</a></li>
-        <li><a href="/LennonTheSnake/">A snake game</a></li>
-        <li><a href="/GameOfLife/">Conway's Game Of Life</a></li>
-    </ul>
+    <h2>This is my website</h2>
+    <div>
+        <h2 id="navigation-heading">Navigation</h2>
+        <details open>
+            <summary class="page-title"><h3>
+                <img class="page-icon" src="ft-Recipes-Extractor/assets/favicon.svg">
+                <a href="/ft-Recipes-Extractor/">Food Truck recipes extractor</a>
+            </h3></summary>
+            <p class="page-desc">
+                A web tool created for
+                <a href="https://discord.com/application-directory/1189308444109451295">
+                    Food Truck discord bot</a>
+                which helps you find out what you can cook based on your available ingredients and dishes
+            </p>
+            <img class="preview" src="assets/FTRecipesExtractorPreview.png">
+        </details>
+        <details>
+            <summary class="page-title"><h3>
+                <img class="page-icon" src="LennonTheSnake/assets/favicon.png">
+                <a href="/LennonTheSnake/">Lennon The Snake</a>
+            </h3></summary>
+            <p class="page-desc">
+                A basic html canvas snake game themed around a Food Truck character, Lennon
+            </p>
+            <img class="preview" src="assets/LennonTheSnakePreview.png">
+        </details>
+        <details>
+            <summary class="page-title"><h3>
+                <img class="page-icon" src="GameOfLife/assets/favicon.png">
+                <a href="/GameOfLife/">Conway's Game Of Life</a>
+            </h3></summary>
+            <p class="page-desc">
+                My attempt at making Conway's Game Of Life, originally an exersize from an online book
+                <a href="https://eloquentjavascript.net/18_http.html#i-XyKQVmCbTN" target=”_blank”>
+                    Eloquent Javascript</a>
+            </p>
+            <img class="preview" src="assets/GameOfLifePreview.png">
+        </details>
+    </div>
     <p>this page is unfinished</p>
 </body>
 
