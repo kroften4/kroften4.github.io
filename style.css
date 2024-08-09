@@ -2,20 +2,51 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
-    margin: 5px;
+    margin: 0;
 }
 
-#wrapper {
+#alligner {
     width: 80vw;
 	max-width: 460px;
     min-width: 365px;
 	margin-inline: auto;
+    
+}
+
+#wrapper {
+    min-height: 100vh;
+    border-inline: 3px solid black;
+    display: flexbox;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px;
+}
+
+#wrapper > * {
+    margin-inline: 7px;
+}
+
+#navigation {
+    margin-bottom: 7px;
+}
+
+#about > p {
+    margin-top: 5px;
+    margin-inline: 3px;
+    border: 3px solid;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.heading {
+    margin-bottom: 0;
 }
 
 .page {
     border: 3px solid black;
     border-radius: 15px;
-    padding: 5px 8px;
+    /* padding: 5px 8px; */
     margin: 3px;
 }
 
@@ -23,7 +54,8 @@ body {
     max-width: 95%;
     box-shadow: 0 0 3px black;
     transition: all 0.4s;
-    margin-inline: 8px;
+    margin-inline: 10px;
+    margin-bottom: 8px;
     border-radius: 6px;
 }
 
@@ -44,13 +76,14 @@ body {
 
 .page-title {
     display: flex;
+    padding: 5px 8px;
 }
 
-.page-title a {
+a.black-link {
     color: black;
 }
 
-.page-title a::after{
+a.black-link::after{
     background-image: url("assets/OpenLinkBtn.png");
     background-size: 15px 15px;
     display: inline-block;
@@ -64,14 +97,9 @@ body {
     margin: 5px 3.5px;
 }
 
-#navigation-heading {
-    margin-bottom: 0;
-}
-
 .show-hide {
     width: 25px;
     height: 25px;
-    /* vertical-align:bottom; */
     transform-origin: center;
     transition: all 0.7s;
     margin-left: auto;
@@ -92,6 +120,7 @@ body {
 
 /* thx https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
 .page-content {
+    padding-inline: 8px;
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.5s;
@@ -104,4 +133,21 @@ body {
 .page-inner {
     overflow: hidden;
     grid-row: 1 / span 2;
+}
+
+footer {
+    margin-top: auto;
+    padding-block: 25px;
+    justify-content: space-evenly;
+    display: flex;
+    border-block: 3px solid;
+    margin-inline: 0 !important;
+    margin-bottom: 10px;
+    /* box-shadow: 0 0 10px black; */
+}
+
+footer a.black-link::after {
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
 }
