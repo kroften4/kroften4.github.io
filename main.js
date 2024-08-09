@@ -1,3 +1,8 @@
+/* 
+TODO: 
+- change [data-opened] to .is-open and apply it to the whole page element
+*/
+
 let showHideBtns = document.querySelectorAll(".show-hide");
 let pageContents = document.querySelector(".page-content");
 

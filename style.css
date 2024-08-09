@@ -8,22 +8,27 @@ body {
 #wrapper {
     width: 80vw;
 	max-width: 460px;
-    min-width: 350px;
+    min-width: 365px;
 	margin-inline: auto;
 }
 
+.page {
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 5px 8px;
+    margin: 3px;
+}
+
 .preview {
-    max-height: 280px;
     max-width: 95%;
-    /* min-width: 300px; */
     box-shadow: 0 0 3px black;
     transition: all 0.4s;
     margin-inline: 8px;
+    border-radius: 6px;
 }
 
 .preview:hover {
     box-shadow: 0 0 10px black;
-    /* margin-inline: 10px; */
 }
 
 .page-desc {
@@ -31,41 +36,18 @@ body {
 }
 
 .page-icon {
+    border-radius: 5px;
     width: 30px;
     height: 30px;
-    transform: translate(0, 8px);
+    vertical-align: -8.5px;
+}
+
+.page-title {
+    display: flex;
 }
 
 .page-title a {
     color: black;
-}
-
-.page-title h3 {
-    margin-block: 5px;
-    display: inline;
-}
-
-#navigation-heading {
-    margin-bottom: 0;
-}
-
-.show-hide {
-    width: 25px;
-    transform: translate(3px, 8px);
-    transform-origin: center;
-    transition: all 0.7s;
-}
-
-.show-hide:hover {
-    transform: translate(3px, 8px) scale(1.13);
-}
-
-.show-hide[data-opened=true] {
-    transform: translate(3px, 8px) rotate(0.25turn);
-}
-
-.show-hide[data-opened=true]:hover {
-    transform: translate(3px, 8px) scale(1.14) rotate(0.25turn);
 }
 
 .page-title a::after{
@@ -74,8 +56,38 @@ body {
     display: inline-block;
     width: 15px;
     height: 15px;
-    transform: translate(4px, 0);
+    margin-left: 3.5px;
     content: "";
+}
+
+.page-title h3 {
+    margin: 5px 3.5px;
+}
+
+#navigation-heading {
+    margin-bottom: 0;
+}
+
+.show-hide {
+    width: 25px;
+    height: 25px;
+    /* vertical-align:bottom; */
+    transform-origin: center;
+    transition: all 0.7s;
+    margin-left: auto;
+    margin-block: 3px;
+}
+
+.show-hide:hover {
+    transform:  scale(1.13);
+}
+
+.show-hide[data-opened=true] {
+    transform:  rotate(0.25turn);
+}
+
+.show-hide[data-opened=true]:hover {
+    transform:  scale(1.14) rotate(0.25turn);
 }
 
 /* thx https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
@@ -90,7 +102,6 @@ body {
 }
 
 .page-inner {
-    /* padding-left: 10px; */
     overflow: hidden;
     grid-row: 1 / span 2;
 }
