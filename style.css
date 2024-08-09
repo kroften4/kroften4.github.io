@@ -6,6 +6,12 @@ body {
     max-height: 280px;
     max-width: 100%;
     min-width: 300px;
+    box-shadow: 0 0 3px black;
+    transition: all 0.4s;
+}
+
+.preview:hover {
+    box-shadow: 0 0 10px black;
 }
 
 .page-desc {
@@ -14,17 +20,65 @@ body {
 
 .page-icon {
     width: 30px;
+    height: 30px;
     transform: translate(0, 8px);
 }
 
-.page-title {
-    display: inline;
+.page-title a {
+    color: black;
 }
 
 .page-title h3 {
     margin-block: 5px;
+    display: inline;
 }
 
 #navigation-heading {
     margin-bottom: 0;
+}
+
+.show-hide {
+    width: 25px;
+    transform: translate(3px, 8px);
+    transform-origin: center;
+    transition: all 0.7s;
+}
+
+.show-hide:hover {
+    transform: translate(3px, 8px) scale(1.13);
+}
+
+.show-hide[data-opened=true] {
+    transform: translate(3px, 8px) rotate(0.25turn);
+}
+
+.show-hide[data-opened=true]:hover {
+    transform: translate(3px, 8px) scale(1.14) rotate(0.25turn);
+}
+
+.page-title a::after{
+    background-image: url("assets/OpenLinkBtn.png");
+    background-size: 15px 15px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    transform: translate(4px, 0);
+    content: "";
+}
+
+/* thx https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
+.page-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s;
+}
+
+.page-content[data-opened=true] {
+    grid-template-rows: 1fr;
+}
+
+.page-inner {
+    padding-left: 10px;
+    overflow: hidden;
+    grid-row: 1 / span 2;
 }
