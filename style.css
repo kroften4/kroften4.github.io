@@ -14,7 +14,7 @@ body {
 }
 
 #wrapper {
-    min-height: 100vh;
+    min-height: 110vh;
     border-inline: 3px solid black;
     display: flexbox;
     display: flex;
