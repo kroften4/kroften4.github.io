@@ -8,13 +8,13 @@ body {
 #alligner {
     width: 80vw;
 	max-width: 460px;
-    min-width: 384px;
+    min-width: 340px;
 	margin-inline: auto;
     
 }
 
 #wrapper {
-    min-height: 110vh;
+    min-height: 101vh;
     border-inline: 3px solid black;
     display: flexbox;
     display: flex;
@@ -86,7 +86,7 @@ a.black-link {
 a.black-link::after{
     background-image: url("assets/OpenLinkBtn.png");
     background-size: 15px 15px;
-    display: inline-block;
+    display:inline-block;
     width: 15px;
     height: 15px;
     margin-left: 3.5px;
