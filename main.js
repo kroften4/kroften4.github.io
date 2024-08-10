@@ -1,6 +1,9 @@
 /* 
 TODO: 
 - change [data-opened] to .is-open and apply it to the whole page element
+- add background with small shapes like circles squares triangles
+  with curved angles, maybe going in rows diagonally
+- fix #preview layout and centralize it
 */
 
 let showHideBtns = document.querySelectorAll(".show-hide");
