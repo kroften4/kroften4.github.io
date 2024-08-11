@@ -34,6 +34,7 @@
     height: 30px;
     filter: var(--btn-filter);
     margin: 2px 3px;
+    user-select: none;
 }
 
 #theme-switch:hover {
