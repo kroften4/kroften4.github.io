@@ -7,7 +7,7 @@
 }
 
 .dark-theme {
-    --bg-color: black;
+    --bg-color: #13181c;
     --accent-color: white;
     --btn-filter: invert(100%);
     --link-color: #8cb4ff;
@@ -55,7 +55,7 @@ body {
     transition: all 0.4s;
 }
 
-#alligner {
+#aligner {
     width: 80vw;
 	max-width: 460px;
     min-width: 340px;
@@ -64,9 +64,8 @@ body {
 
 #wrapper {
     position: relative;
-    min-height: 101vh;
+    min-height: 100.05vh;
     border-inline: 3px solid var(--accent-color);
-    display: flexbox;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 5px var(--accent-color);
@@ -106,6 +105,7 @@ body {
     margin-inline: 10px;
     margin-bottom: 8px;
     border-radius: 6px;
+    justify-self: center;
 }
 
 .preview:hover {
@@ -197,6 +197,7 @@ a.black-link::after{
 .page-inner {
     overflow: hidden;
     grid-row: 1 / span 2;
+    display: grid;
 }
 
 footer {

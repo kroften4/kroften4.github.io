@@ -1,10 +1,3 @@
-/* 
-TODO: 
-- maybe add background with small shapes like circles squares triangles
-  with curved angles, maybe going in rows diagonally
-- centralize #preview
-*/
-
 let showHideBtns = document.querySelectorAll(".show-hide");
 let pageContents = document.querySelector(".page-content");
 
