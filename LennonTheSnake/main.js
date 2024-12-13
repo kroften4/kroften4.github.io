@@ -286,17 +286,18 @@ function drawState(state) {
     cx.fillText(message, fieldSize.x * scale / 2, fieldSize.y * scale / 2);
 }
 
+const lennonDomain = "https://kroften4.github.io/LennonTheSnake/"
 const exoticApplesSrc = [
-    "assets/apple.svg",
-    "assets/avocado.svg",
-    "assets/beans.svg",
-    "assets/cherries.svg",
-    "assets/corn.svg",
-    "assets/ginger.svg",
-    "assets/grapes.svg",
-    "assets/mushroom.svg",
-    "assets/pineapple.svg",
-    "assets/tea_leaves.svg"
+    domain + "assets/apple.svg",
+    domain + "assets/avocado.svg",
+    domain + "assets/beans.svg",
+    domain + "assets/cherries.svg",
+    domain + "assets/corn.svg",
+    domain + "assets/ginger.svg",
+    domain + "assets/grapes.svg",
+    domain + "assets/mushroom.svg",
+    domain + "assets/pineapple.svg",
+    domain + "assets/tea_leaves.svg"
 ];
 
 function preloadImages(urls) {
