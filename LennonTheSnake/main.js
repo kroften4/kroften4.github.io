@@ -288,16 +288,16 @@ function drawState(state) {
 
 const lennonDomain = "https://kroften4.github.io/LennonTheSnake/"
 const exoticApplesSrc = [
-    domain + "assets/apple.svg",
-    domain + "assets/avocado.svg",
-    domain + "assets/beans.svg",
-    domain + "assets/cherries.svg",
-    domain + "assets/corn.svg",
-    domain + "assets/ginger.svg",
-    domain + "assets/grapes.svg",
-    domain + "assets/mushroom.svg",
-    domain + "assets/pineapple.svg",
-    domain + "assets/tea_leaves.svg"
+    lennonDomain + "assets/apple.svg",
+    lennonDomain + "assets/avocado.svg",
+    lennonDomain + "assets/beans.svg",
+    lennonDomain + "assets/cherries.svg",
+    lennonDomain + "assets/corn.svg",
+    lennonDomain + "assets/ginger.svg",
+    lennonDomain + "assets/grapes.svg",
+    lennonDomain + "assets/mushroom.svg",
+    lennonDomain + "assets/pineapple.svg",
+    lennonDomain + "assets/tea_leaves.svg"
 ];
 
 function preloadImages(urls) {
