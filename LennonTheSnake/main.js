@@ -251,22 +251,27 @@ function drawApple(apple) {
     // cx.shadowOffsetY = 0;
 }
 
-let scoreDisplay = document.querySelector("#score");
-scoreDisplay.style = "display: none";
-document.body.appendChild(scoreDisplay);
+let scoreDisplay = document.querySelector("#krftn-snake-score");
+if (scoreDisplay !== null) {
+    scoreDisplay.style = "display: none";
+    document.body.appendChild(scoreDisplay);
+}
 function drawState(state) {
     if (state.status == "playing" || state.status == "winning") {
         let snake = state.snake;
         let apple = state.apple;
-        scoreDisplay.innerText = "Score: " + snake.tail.length;
-        scoreDisplay.style = "";
+        if (scoreDisplay !== null) {
+            scoreDisplay.innerText = "Score: " + snake.tail.length;
+            scoreDisplay.style = "";
+        }
         drawField();
         if (apple.exists)
             drawApple(apple);
         drawSnake(snake);
         return;
     }
-    scoreDisplay.style = "display: none";
+    if (scoreDisplay !== null) 
+        scoreDisplay.style = "display: none";
     let message = "";
     if (state.status == "lost") {
         message = "GAME OVER";
@@ -309,7 +314,6 @@ function preloadImages(urls) {
     return Promise.all(promises);
 }
 
-
 let exoticApplesImgs;
 let recentArrowKeys;
 let fieldSize;
@@ -322,9 +326,11 @@ async function initializeGame() {
     exoticApplesImgs = await preloadImages(exoticApplesSrc);
     recentArrowKeys = trackRecentKeys(["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]);
     fieldSize = new Vec(15, 15);
-    scale = 30;
+    canvas = document.querySelector("#krftn-snake-game");
+    if (canvas === null)
+        throw new Error("krftn Snake Game: couldn't find canvas with id krftn-snake-game");
+    scale = canvas.getAttribute("data-scale") ?? 30;
     appleImg = Math.floor(Math.random() * exoticApplesImgs.length);
-    canvas = document.querySelector("canvas");
     canvas.height = scale * fieldSize.x;
     canvas.width = scale * fieldSize.y;
     cx = canvas.getContext("2d");
@@ -332,13 +338,12 @@ async function initializeGame() {
     drawState(state);
     cx.textAlign = "center";
     cx.fillStyle = "black";
-    cx.font = `bold 14px Arial`;
-    cx.fillText("Press any key to start", fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
-    window.addEventListener("keydown", function startGame(event) {
-        this.window.removeEventListener("keydown", startGame);
+    cx.font = `bold ${scale / 2}px Arial`;
+    cx.fillText("Click to start the game", fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
+    canvas.addEventListener("click", function startGame(event) {
         runGame();
         event.preventDefault();
-    });
+    }, { once: true });
 }
 
 function runGame() {
@@ -350,10 +355,13 @@ function runGame() {
             if (state.status == "won" || state.status == "lost") {
                 cx.textAlign = "center";
                 cx.fillStyle = "black";
-                cx.font = `bold 14px Arial`;
-                cx.fillText("Your score: " + state.snake.tail.length,
+                cx.font = `bold ${scale / 2}px Arial`;
+                cx.fillText(`Your score: ${state.snake.tail.length}. Click to restart`,
                     fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
                 clearInterval(interval);
+                canvas.addEventListener("click", function startGame(event) {
+                    initializeGame();
+                }, { once: true });
             }
         })
     }, 150)
