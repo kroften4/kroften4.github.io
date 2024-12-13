@@ -282,16 +282,16 @@ function drawState(state) {
 }
 
 const exoticApplesSrc = [
-    "/LennonTheSnake/assets/apple.svg",
-    "/LennonTheSnake/assets/avocado.svg",
-    "/LennonTheSnake/assets/beans.svg",
-    "/LennonTheSnake/assets/cherries.svg",
-    "/LennonTheSnake/assets/corn.svg",
-    "/LennonTheSnake/assets/ginger.svg",
-    "/LennonTheSnake/assets/grapes.svg",
-    "/LennonTheSnake/assets/mushroom.svg",
-    "/LennonTheSnake/assets/pineapple.svg",
-    "/LennonTheSnake/assets/tea_leaves.svg"
+    "assets/apple.svg",
+    "assets/avocado.svg",
+    "assets/beans.svg",
+    "assets/cherries.svg",
+    "assets/corn.svg",
+    "assets/ginger.svg",
+    "assets/grapes.svg",
+    "assets/mushroom.svg",
+    "assets/pineapple.svg",
+    "assets/tea_leaves.svg"
 ];
 
 function preloadImages(urls) {
