@@ -173,7 +173,6 @@ function trackRecentKeys(keys) {
         if (keys.includes(event.key)) {
             if (event.key != recent.keys.slice(-1) && recent.keys.length < 3)
                 recent.keys.push(event.key);
-            event.preventDefault();
         }
     }
     window.addEventListener("keydown", track);
@@ -343,7 +342,6 @@ async function initializeGame() {
     cx.fillText("Click to start the game", fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
     canvas.addEventListener("click", function startGame(event) {
         runGame();
-        event.preventDefault();
     }, { once: true });
 }
 
