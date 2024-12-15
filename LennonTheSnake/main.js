@@ -322,9 +322,24 @@ let cx;
 let scale;
 let state;
 let appleImg;
+const ArrowKeys = ["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"];
+let recent;
+function track(event) {
+    if (ArrowKeys.includes(event.key)) {
+        if (event.key != recent.keys.slice(-1) && recent.keys.length < 3)
+            recent.keys.push(event.key);
+        event.preventDefault();
+    }
+}
+
 async function initializeGame() {
     exoticApplesImgs = await preloadImages(exoticApplesSrc);
-    recentArrowKeys = trackRecentKeys(["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft"]);
+
+    recent = Object.create(null);
+    recent.keys = []
+    document.addEventListener("keydown", track);
+    recentArrowKeys = recent
+
     fieldSize = new Vec(15, 15);
     canvas = document.querySelector("#krftn-snake-game");
     if (canvas === null)
@@ -352,6 +367,7 @@ function runGame() {
             state = state.update(recentArrowKeys);
             drawState(state);
             if (state.status == "won" || state.status == "lost") {
+                document.removeEventListener("keydown", track);
                 cx.textAlign = "center";
                 cx.fillStyle = "black";
                 cx.font = `bold ${scale / 2}px Arial`;
