@@ -332,14 +332,15 @@ function track(event) {
     }
 }
 
-async function initializeGame() {
-    exoticApplesImgs = await preloadImages(exoticApplesSrc);
-
+function initializeEventListeners() {
     recent = Object.create(null);
     recent.keys = []
     document.addEventListener("keydown", track);
     recentArrowKeys = recent
+}
 
+async function initializeGame() {
+    exoticApplesImgs = await preloadImages(exoticApplesSrc);
     fieldSize = new Vec(15, 15);
     canvas = document.querySelector("#krftn-snake-game");
     if (canvas === null)
@@ -356,6 +357,7 @@ async function initializeGame() {
     cx.font = `bold ${scale / 2}px Arial`;
     cx.fillText("Click to start the game", fieldSize.x * scale * 0.5, fieldSize.y * scale * 0.7);
     canvas.addEventListener("click", function startGame(event) {
+        initializeEventListeners();
         runGame();
     }, { once: true });
 }
